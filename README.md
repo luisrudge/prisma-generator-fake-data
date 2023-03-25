@@ -18,7 +18,7 @@ Prisma-Generator-Fake-Data is a generator that uses [faker.js](https://fakerjs.d
   - `yarn add -D prisma-generator-fake-data`
   - `pnpm install -D prisma-generator-fake-data`
 - Modify your Prisma model file
-  ```
+  ```prisma
   generator custom_generator {
       provider = "prisma-generator-fake-data"
       /// File will be generated in this path
@@ -35,7 +35,7 @@ Once the file is generated, you can import it in your project.
 
 Prisma Model:
 
-```
+```prisma
 generator client {
   provider = "prisma-client-js"
 }
