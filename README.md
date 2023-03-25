@@ -33,8 +33,6 @@ You're all done!
 
 Once the file is generated, you can import it in your project.
 
-Prisma Model:
-
 ```prisma
 generator client {
   provider = "prisma-client-js"
