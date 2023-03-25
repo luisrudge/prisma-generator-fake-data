@@ -1,5 +1,9 @@
 # prisma-generator-fake-data
 
+![Generated with Bing Image Creator. Prompt: create a logo with a cute panda smiling and holding a triangular prisma, digital art](assets/logo.jpg)
+
+_Generated with Bing Image Creator. Prompt: create a logo with a cute panda smiling and holding a triangular prisma, digital art_
+
 ## The easiest way to generate mock data based on your Prisma models!
 
 #### What is Prisma-Generator-Fake-Data?
@@ -72,4 +76,7 @@ console.log(fakeUser());
 */
 ```
 
-> This generator was bootstraped using [create-prisma-generator](https://github.com/YassinEldeeb/create-prisma-generator)
+<sup><sub>Inspired by https://github.com/toyamarinyon/prisma-factory-generator</sub></sup>
+
+<sup><sub>This generator was bootstraped using [create-prisma-generator](https://github.com/YassinEldeeb/create-prisma-generator)
+</sub></sup>
