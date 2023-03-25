@@ -1,0 +1,20 @@
+{
+  "name": "usage",
+  "private": true,
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "4.11.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.9",
+    "prisma": "4.11.0",
+    "prisma-generator-fake-data": "1.0.0",
+    "typescript": "5.0.2"
+  }
+}

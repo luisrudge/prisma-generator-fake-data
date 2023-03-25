@@ -1,0 +1,76 @@
+{
+  "name": "prisma-generator-fake-data",
+  "description": "Provide a description about your generator",
+  "version": "1.0.0",
+  "main": "dist/generator.js",
+  "license": "MIT",
+  "bin": {
+    "prisma-generator-fake-data": "dist/bin.js"
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "scripts": {
+    "start": "node dist/bin.js",
+    "dev": "npx tsc -w",
+    "build": "npx tsc",
+    "prepack": "yarn build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@prisma/client": "4.11.0",
+    "@prisma/generator-helper": "4.11.0",
+    "@prisma/sdk": "3.15.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^18.15.8",
+    "prettier": "^2.8.7",
+    "@types/prettier": "^2.7.2",
+    "prisma": "^4.11.0",
+    "semantic-release": "^21.0.0",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.7"
+  },
+  "homepage": "Link to homepage or github readme here",
+  "repository": {
+    "type": "git",
+    "url": "Repo link here"
+  },
+  "author": "Your Name <Your Email>",
+  "keywords": [
+    "prisma",
+    "prisma2",
+    "generator"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ],
+          "message": "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  }
+}

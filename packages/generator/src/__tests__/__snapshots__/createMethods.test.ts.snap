@@ -1,0 +1,64 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`createMethods 1`] = `
+"import type { Prisma } from '@prisma/client';
+import { faker } from '@faker-js/faker';
+
+export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
+  return {
+    string: faker.lorem.words(5),
+    boolean: faker.datatype.boolean(),
+    int: faker.datatype.number(),
+    bigInt: faker.datatype.number(),
+    float: faker.datatype.float(),
+    dateTime: faker.datatype.datetime(),
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+    ],
+    bigIntArray: [
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+    ],
+    floatArray: [
+      faker.datatype.float(),
+      faker.datatype.float(),
+      faker.datatype.float(),
+      faker.datatype.float(),
+      faker.datatype.float(),
+    ],
+    booleanArray: [
+      faker.datatype.boolean(),
+      faker.datatype.boolean(),
+      faker.datatype.boolean(),
+      faker.datatype.boolean(),
+      faker.datatype.boolean(),
+    ],
+    dateTimeArray: [
+      faker.datatype.datetime(),
+      faker.datatype.datetime(),
+      faker.datatype.datetime(),
+      faker.datatype.datetime(),
+      faker.datatype.datetime(),
+    ],
+    json: faker.datatype.json(),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C']),
+    ...overrides,
+  };
+}
+export function fakeUserRelation(
+  overrides?: Partial<Prisma.UserRelationUncheckedCreateInput>,
+) {
+  return {
+    ...overrides,
+  };
+}
+"
+`;
