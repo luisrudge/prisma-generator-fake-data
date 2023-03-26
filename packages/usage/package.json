@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/node": "18.15.9",
     "prisma": "4.11.0",
-    "prisma-generator-fake-data": "1.0.0",
+    "prisma-generator-fake-data": "0.1.0",
     "typescript": "5.0.2"
   }
 }
