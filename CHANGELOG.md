@@ -1,3 +1,9 @@
+### [0.3.3](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.2...v0.3.3) (2023-03-26)
+
+### Bug Fixes
+
+- omit relation fields from overrides types ([a0936d5](https://github.com/luisrudge/prisma-generator-fake-data/commit/a0936d5270f6a15a9cf525d9b97ab78db631af70))
+
 ### [0.3.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.1...v0.3.2) (2023-03-26)
 
 ### Bug Fixes
