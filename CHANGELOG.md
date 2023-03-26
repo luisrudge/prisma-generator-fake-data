@@ -1,3 +1,9 @@
+### [0.3.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.1...v0.3.2) (2023-03-26)
+
+### Bug Fixes
+
+- parse json field during creation ([9dcbf15](https://github.com/luisrudge/prisma-generator-fake-data/commit/9dcbf15b3b10ecbf090fff7f67df68e204da92a7))
+
 ### [0.3.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.0...v0.3.1) (2023-03-26)
 
 ## [0.3.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.2.0...v0.3.0) (2023-03-26)
