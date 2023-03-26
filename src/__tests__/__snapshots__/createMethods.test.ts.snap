@@ -12,11 +12,19 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     string: faker.lorem.words(5),
+    nullableString: faker.datatype.boolean() ? null : faker.lorem.words(5),
     boolean: faker.datatype.boolean(),
+    nullableBoolean: faker.datatype.boolean() ? null : faker.datatype.boolean(),
     int: faker.datatype.number(),
+    nullableInt: faker.datatype.boolean() ? null : faker.datatype.number(),
     bigInt: faker.datatype.number(),
+    nullableBigInt: faker.datatype.boolean() ? null : faker.datatype.number(),
     float: faker.datatype.float(),
+    nullableFloat: faker.datatype.boolean() ? null : faker.datatype.float(),
     dateTime: faker.datatype.datetime(),
+    nullableDateTime: faker.datatype.boolean()
+      ? null
+      : faker.datatype.datetime(),
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [
       faker.datatype.number(),
@@ -54,7 +62,11 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
       faker.datatype.datetime(),
     ],
     json: { test: faker.lorem.word() },
+    nullableJson: faker.datatype.boolean() ? null : faker.datatype.json(),
     enum: faker.helpers.arrayElement(['A', 'B', 'C']),
+    nullableEnum: faker.datatype.boolean()
+      ? null
+      : faker.helpers.arrayElement(['A', 'B', 'C']),
     ...overrides,
   };
 }

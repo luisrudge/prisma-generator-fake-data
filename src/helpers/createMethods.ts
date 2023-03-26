@@ -3,6 +3,10 @@ import { DMMF } from '@prisma/generator-helper';
 import { formatFile } from '../utils/formatFile';
 
 function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
+  let nullHandling = '';
+  if (!field.isRequired) {
+    nullHandling = `faker.datatype.boolean() ? null : `;
+  }
   if (field.kind === 'enum') {
     const enumName = field.type;
     const enumValues = enums.find((it) => it.name === enumName)?.values || [];
@@ -14,59 +18,59 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
       const enumValuesAsString = enumValues
         .map((v) => `'${v.name}'`)
         .join(', ');
-      return `${field.name}: faker.helpers.arrayElement([${enumValuesAsString}])`;
+      return `${field.name}: ${nullHandling}faker.helpers.arrayElement([${enumValuesAsString}])`;
     }
   }
   if (field.type === 'String') {
     if (field.isList) {
-      return `${field.name}: faker.lorem.words(5).split(' ')`;
+      return `${field.name}: ${nullHandling}faker.lorem.words(5).split(' ')`;
     }
     if (field.name === 'email') {
-      return `${field.name}: faker.internet.email()`;
+      return `${field.name}: ${nullHandling}faker.internet.email()`;
     }
     if (field.name === 'name') {
-      return `${field.name}: faker.name.fullName()`;
+      return `${field.name}: ${nullHandling}faker.name.fullName()`;
     }
     if (field.name === 'firstName') {
-      return `${field.name}: faker.name.firstName()`;
+      return `${field.name}: ${nullHandling}faker.name.firstName()`;
     }
     if (field.name === 'lastName') {
-      return `${field.name}: faker.name.lastName()`;
+      return `${field.name}: ${nullHandling}faker.name.lastName()`;
     }
-    return `${field.name}: faker.lorem.words(5)`;
+    return `${field.name}: ${nullHandling}faker.lorem.words(5)`;
   }
   if (field.type === 'Int' || field.type === 'BigInt') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()]`;
+      return `${field.name}: ${nullHandling}[faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()]`;
     }
     if (field.name === 'age') {
-      return `${field.name}: faker.datatype.number({min: 0, max: 99})`;
+      return `${field.name}: ${nullHandling}faker.datatype.number({min: 0, max: 99})`;
     }
-    return `${field.name}: faker.datatype.number()`;
+    return `${field.name}: ${nullHandling}faker.datatype.number()`;
   }
   if (field.type === 'Float') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()]`;
+      return `${field.name}: ${nullHandling}[faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()]`;
     }
-    return `${field.name}: faker.datatype.float()`;
+    return `${field.name}: ${nullHandling}faker.datatype.float()`;
   }
   if (field.type === 'Boolean') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()]`;
+      return `${field.name}: ${nullHandling}[faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()]`;
     }
-    return `${field.name}: faker.datatype.boolean()`;
+    return `${field.name}: ${nullHandling}faker.datatype.boolean()`;
   }
   if (field.type === 'Decimal') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal()]`;
+      return `${field.name}: ${nullHandling}[faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal()]`;
     }
-    return `${field.name}: faker.datatype.hexaDecimal()`;
+    return `${field.name}: ${nullHandling}faker.datatype.hexaDecimal()`;
   }
   if (field.type === 'DateTime') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()]`;
+      return `${field.name}: ${nullHandling}[faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()]`;
     }
-    return `${field.name}: faker.datatype.datetime()`;
+    return `${field.name}: ${nullHandling}faker.datatype.datetime()`;
   }
   if (field.type === 'Json') {
     const docLines = field.documentation?.split('\n') || [];
@@ -79,9 +83,9 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
         );
         return null;
       }
-      return `${field.name}: ${fakeValue}`;
+      return `${field.name}: ${nullHandling}${fakeValue}`;
     }
-    return `${field.name}: faker.datatype.json()`;
+    return `${field.name}: ${nullHandling}faker.datatype.json()`;
   }
   logger.warn(
     `Type ${field.type}${field.isList ? '[]' : ''} (${

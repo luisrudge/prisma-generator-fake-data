@@ -10,6 +10,7 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
       notificationsEnabled: faker.datatype.boolean(),
       preferredColor: faker.color.rgb(),
     },
+    maybeString: faker.datatype.boolean() ? null : faker.lorem.words(5),
     status: faker.helpers.arrayElement(['active', 'inactive']),
     ...overrides,
   };

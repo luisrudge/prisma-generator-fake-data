@@ -12,16 +12,22 @@ model User {
   lastName            String
   string              String
   stringWithDefault   String        @default("default")
+  nullableString      String?
   boolean             Boolean
   booleanWithDefault  Boolean       @default(true)
+  nullableBoolean     Boolean?
   int                 Int
   intWithDefault      Int           @default(1)
+  nullableInt         Int?
   bigInt              BigInt
   bigIntWithDefault   BigInt        @default(1)
+  nullableBigInt      BigInt?
   float               Float
   floatWithDefault    Float         @default(1.1)
+  nullableFloat       Float?
   dateTime            DateTime
   dateTimeWithDefault DateTime      @default(now())
+  nullableDateTime    DateTime?
   stringArray         String[]
   intArray            Int[]
   bigIntArray         BigInt[]
@@ -32,8 +38,10 @@ model User {
   ///FAKE:{test: faker.lorem.word()}
   json                Json
   jsonWithDefault     Json          @default("{}")
+  nullableJson        Json?
   enum                Enum
   enumWithDefault     Enum          @default(A)
+  nullableEnum        Enum?
   relation            UserRelation?
 }
 

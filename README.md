@@ -84,6 +84,7 @@ console.log(fakeUser());
 ### Fields with special treatment:
 
 - `name`, `fullName`, `firstName`, `lastName`, `age` will use specific faker-js methods to look more realistic
+- If you have an optional Prisma field (example: `message   String?`), the fake data will randomly return `null` for that property
 - If you have a `JSON` Prisma field, you can add your own data shape by adding a special comment above your field
   - Example: `///FAKE:{test: faker.lorem.word()}`
   - Keep in mind that the generator will just relay whatever is after `FAKE:` to your generated code, so it needs to be valid TypeScript
