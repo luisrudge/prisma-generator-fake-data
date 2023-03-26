@@ -16,7 +16,10 @@
     "build": "npx tsc",
     "prepack": "yarn build",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
@@ -25,13 +28,11 @@
     "@prisma/sdk": "3.15.2"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
     "@types/node": "^18.15.8",
-    "prettier": "^2.8.7",
     "@types/prettier": "^2.7.2",
+    "generate-changelog": "^1.8.0",
+    "prettier": "^2.8.7",
     "prisma": "^4.11.0",
-    "semantic-release": "^21.0.0",
     "typescript": "^5.0.2",
     "vitest": "^0.29.7"
   },
@@ -47,32 +48,5 @@
     "generator",
     "fake data",
     "faker-js"
-  ],
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/changelog",
-        {
-          "changelogFile": "CHANGELOG.md"
-        }
-      ],
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "CHANGELOG.md",
-            "package.json"
-          ],
-          "message": "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ]
-    ]
-  }
+  ]
 }
