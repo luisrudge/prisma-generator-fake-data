@@ -1,3 +1,10 @@
+### 0.2.0 (2023-03-26)
+
+##### New Features
+
+- custom data shapes for JSON fields ([a2432738](https://github.com/luisrudge/prisma-generator-fake-data/commit/a24327385e886ed59ba6005b04380d9f8e439a1d))
+- add name, fullName, firstName faker methods ([5ff33fa4](https://github.com/luisrudge/prisma-generator-fake-data/commit/5ff33fa48f66bbdc6c310831bedd1f76292c1274))
+
 #### 0.1.2 (2023-03-26)
 
 ##### Chores
