@@ -1,3 +1,9 @@
+### [0.3.4](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.3...v0.3.4) (2023-03-26)
+
+### Bug Fixes
+
+- empty omit ([a097169](https://github.com/luisrudge/prisma-generator-fake-data/commit/a097169cc1639d4b1cf22a1ce218a0ed938410b3))
+
 ### [0.3.3](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.2...v0.3.3) (2023-03-26)
 
 ### Bug Fixes
