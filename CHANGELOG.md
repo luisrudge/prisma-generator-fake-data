@@ -1,3 +1,9 @@
+### [0.3.5](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.4...v0.3.5) (2023-03-26)
+
+### Bug Fixes
+
+- return undefined for optional fields ([0d92c64](https://github.com/luisrudge/prisma-generator-fake-data/commit/0d92c6401b018830f4b9057c1f4e5144c2c9334a))
+
 ### [0.3.4](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.3...v0.3.4) (2023-03-26)
 
 ### Bug Fixes
