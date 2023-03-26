@@ -111,10 +111,22 @@ export async function createMethods({ enums, models }: DMMF.Datamodel) {
       .map((f) => getFieldDefinition(f, enums))
       .filter(Boolean);
 
+    const relationFields = m.fields
+      .filter((field) => {
+        return m.fields.find((it) => {
+          return it.relationFromFields?.includes(field.name);
+        });
+      })
+      .map((f) => f.name);
+    const omitFields =
+      relationFields.length > 0
+        ? `, ${relationFields.map((it) => `'${it}'`).join(' | ')}`
+        : '';
+
     functions.push(
-      `export function fake${m.name}(overrides?: Partial<Prisma.${
+      `export function fake${m.name}(overrides?: Partial<Omit<Prisma.${
         m.name
-      }UncheckedCreateInput>) {
+      }UncheckedCreateInput${omitFields}>>) {
         return {
           ${validFields.join(',\n')}${validFields.length > 0 ? ',' : ''}
           ...overrides,

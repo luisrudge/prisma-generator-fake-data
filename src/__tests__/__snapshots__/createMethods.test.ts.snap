@@ -4,7 +4,9 @@ exports[`createMethods 1`] = `
 "import type { Prisma } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 
-export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
+export function fakeUser(
+  overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput>>,
+) {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
@@ -73,7 +75,9 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
   };
 }
 export function fakeUserRelation(
-  overrides?: Partial<Prisma.UserRelationUncheckedCreateInput>,
+  overrides?: Partial<
+    Omit<Prisma.UserRelationUncheckedCreateInput, 'userId' | 'userId2'>
+  >,
 ) {
   return {
     ...overrides,
