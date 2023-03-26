@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator custom_generator {
+  ///in your project, you'll use it like this
+  ///provider = "prisma-generator-fake-data"
+  provider = "ts-node ../src/bin.ts"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id     String     @id @default(cuid())
+  email  String     @unique
+  name   String
+  age    Int
+  status UserStatus
+}
+
+enum UserStatus {
+  active
+  inactive
+}

@@ -28,5 +28,4 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Run Tests 🧪
-        working-directory: ./packages/generator
         run: yarn run test

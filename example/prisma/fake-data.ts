@@ -5,6 +5,7 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
   return {
     email: faker.internet.email(),
     name: faker.lorem.words(5),
+    age: faker.datatype.number(),
     status: faker.helpers.arrayElement(['active', 'inactive']),
     ...overrides,
   };

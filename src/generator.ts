@@ -1,6 +1,4 @@
 import { generatorHandler, GeneratorOptions } from '@prisma/generator-helper';
-import { logger } from '@prisma/sdk';
-import path from 'path';
 import { GENERATOR_NAME } from './constants';
 import { createMethods } from './helpers/createMethods';
 import { writeFileSafely } from './utils/writeFileSafely';
@@ -8,8 +6,6 @@ import { writeFileSafely } from './utils/writeFileSafely';
 const { version } = require('../package.json');
 generatorHandler({
   onManifest() {
-    console.log(GENERATOR_NAME);
-    logger.info(`${GENERATOR_NAME}:Registered`);
     return {
       version,
       defaultOutput: './fake-data.ts',
