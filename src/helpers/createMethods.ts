@@ -121,7 +121,7 @@ export async function createMethods({ enums, models }: DMMF.Datamodel) {
     const omitFields =
       relationFields.length > 0
         ? `, ${relationFields.map((it) => `'${it}'`).join(' | ')}`
-        : '';
+        : `, ''`;
 
     functions.push(
       `export function fake${m.name}(overrides?: Partial<Omit<Prisma.${

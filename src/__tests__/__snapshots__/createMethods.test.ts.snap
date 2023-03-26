@@ -5,7 +5,7 @@ exports[`createMethods 1`] = `
 import { faker } from '@faker-js/faker';
 
 export function fakeUser(
-  overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput>>,
+  overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput, ''>>,
 ) {
   return {
     email: faker.internet.email(),
