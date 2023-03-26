@@ -85,7 +85,7 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
       }
       return `${field.name}: ${nullHandling}${fakeValue}`;
     }
-    return `${field.name}: ${nullHandling}faker.datatype.json()`;
+    return `${field.name}: ${nullHandling}JSON.parse(faker.datatype.json())`;
   }
   logger.warn(
     `Type ${field.type}${field.isList ? '[]' : ''} (${

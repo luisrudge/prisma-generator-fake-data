@@ -62,7 +62,9 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
       faker.datatype.datetime(),
     ],
     json: { test: faker.lorem.word() },
-    nullableJson: faker.datatype.boolean() ? null : faker.datatype.json(),
+    nullableJson: faker.datatype.boolean()
+      ? null
+      : JSON.parse(faker.datatype.json()),
     enum: faker.helpers.arrayElement(['A', 'B', 'C']),
     nullableEnum: faker.datatype.boolean()
       ? null
