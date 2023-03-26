@@ -5,7 +5,7 @@ import { formatFile } from '../utils/formatFile';
 function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
   let nullHandling = '';
   if (!field.isRequired) {
-    nullHandling = `faker.datatype.boolean() ? null : `;
+    nullHandling = `faker.datatype.boolean() ? undefined : `;
   }
   if (field.kind === 'enum') {
     const enumName = field.type;

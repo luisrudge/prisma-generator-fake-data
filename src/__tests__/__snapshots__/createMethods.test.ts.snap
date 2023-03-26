@@ -14,18 +14,24 @@ export function fakeUser(
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     string: faker.lorem.words(5),
-    nullableString: faker.datatype.boolean() ? null : faker.lorem.words(5),
+    nullableString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
     boolean: faker.datatype.boolean(),
-    nullableBoolean: faker.datatype.boolean() ? null : faker.datatype.boolean(),
+    nullableBoolean: faker.datatype.boolean()
+      ? undefined
+      : faker.datatype.boolean(),
     int: faker.datatype.number(),
-    nullableInt: faker.datatype.boolean() ? null : faker.datatype.number(),
+    nullableInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
     bigInt: faker.datatype.number(),
-    nullableBigInt: faker.datatype.boolean() ? null : faker.datatype.number(),
+    nullableBigInt: faker.datatype.boolean()
+      ? undefined
+      : faker.datatype.number(),
     float: faker.datatype.float(),
-    nullableFloat: faker.datatype.boolean() ? null : faker.datatype.float(),
+    nullableFloat: faker.datatype.boolean()
+      ? undefined
+      : faker.datatype.float(),
     dateTime: faker.datatype.datetime(),
     nullableDateTime: faker.datatype.boolean()
-      ? null
+      ? undefined
       : faker.datatype.datetime(),
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [
@@ -65,11 +71,11 @@ export function fakeUser(
     ],
     json: { test: faker.lorem.word() },
     nullableJson: faker.datatype.boolean()
-      ? null
+      ? undefined
       : JSON.parse(faker.datatype.json()),
     enum: faker.helpers.arrayElement(['A', 'B', 'C']),
     nullableEnum: faker.datatype.boolean()
-      ? null
+      ? undefined
       : faker.helpers.arrayElement(['A', 'B', 'C']),
     ...overrides,
   };
