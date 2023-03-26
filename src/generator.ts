@@ -10,6 +10,7 @@ generatorHandler({
       version,
       defaultOutput: './fake-data.ts',
       prettyName: GENERATOR_NAME,
+      requiresGenerators: ['prisma-client-js'],
     };
   },
   async onGenerate(options: GeneratorOptions) {

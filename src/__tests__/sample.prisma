@@ -7,6 +7,7 @@ model User {
   id                  String        @id @default(cuid())
   email               String
   name                String
+  age                 Int
   firstName           String
   lastName            String
   string              String
@@ -27,6 +28,8 @@ model User {
   floatArray          Float[]
   booleanArray        Boolean[]
   dateTimeArray       DateTime[]
+  ///anotherComment
+  ///FAKE:{test: faker.lorem.word()}
   json                Json
   jsonWithDefault     Json          @default("{}")
   enum                Enum

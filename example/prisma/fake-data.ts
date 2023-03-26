@@ -5,7 +5,11 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
-    age: faker.datatype.number(),
+    age: faker.datatype.number({ min: 0, max: 99 }),
+    settings: {
+      notificationsEnabled: faker.datatype.boolean(),
+      preferredColor: faker.color.rgb(),
+    },
     status: faker.helpers.arrayElement(['active', 'inactive']),
     ...overrides,
   };

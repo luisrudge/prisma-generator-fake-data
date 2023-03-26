@@ -52,6 +52,8 @@ model User {
   id       String        @id @default(cuid())
   email    String        @unique
   name     String
+  ///FAKE:{notificationsEnabled: faker.datatype.boolean(), preferredColor: faker.color.rgb()}
+  settings Json
   status   UserStatus
 }
 
@@ -67,12 +69,21 @@ import { fakeUser } from './prisma/fake-data'; //or your custom output path
 console.log(fakeUser());
 /*
 {
-  email: 'Yadira.Gutmann9@hotmail.com',
-  name: 'cum totam molestiae perferendis recusandae',
-  status: 'active'
+  email: 'Marianne_Zulauf96@yahoo.com',
+  name: 'Gerald Schulist',
+  age: 30,
+  settings: { notificationsEnabled: true, preferredColor: '#a7e5db' },
+  status: 'inactive'
 }
 */
 ```
+
+### Fields with special treatment:
+
+- `name`, `fullName`, `firstName`, `lastName`, `age` will use specific faker-js methods to look more realistic
+- If you have a `JSON` Prisma field, you can add your own data shape by adding a special comment above your field
+  - Example: `///FAKE:{test: faker.lorem.word()}`
+  - Keep in mind that the generator will just relay whatever is after `FAKE:` to your generated code, so it needs to be valid TypeScript
 
 <sup><sub>Inspired by https://github.com/toyamarinyon/prisma-factory-generator</sub></sup>
 

@@ -14,11 +14,13 @@ datasource db {
 }
 
 model User {
-  id     String     @id @default(cuid())
-  email  String     @unique
-  name   String
-  age    Int
-  status UserStatus
+  id       String     @id @default(cuid())
+  email    String     @unique
+  name     String
+  age      Int
+  ///FAKE:{notificationsEnabled: faker.datatype.boolean(), preferredColor: faker.color.rgb()}
+  settings Json
+  status   UserStatus
 }
 
 enum UserStatus {

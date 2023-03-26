@@ -8,6 +8,7 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
+    age: faker.datatype.number({ min: 0, max: 99 }),
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
     string: faker.lorem.words(5),
@@ -52,7 +53,7 @@ export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
       faker.datatype.datetime(),
       faker.datatype.datetime(),
     ],
-    json: faker.datatype.json(),
+    json: { test: faker.lorem.word() },
     enum: faker.helpers.arrayElement(['A', 'B', 'C']),
     ...overrides,
   };

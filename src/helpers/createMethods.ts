@@ -39,6 +39,9 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
     if (field.isList) {
       return `${field.name}: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()]`;
     }
+    if (field.name === 'age') {
+      return `${field.name}: faker.datatype.number({min: 0, max: 99})`;
+    }
     return `${field.name}: faker.datatype.number()`;
   }
   if (field.type === 'Float') {
@@ -66,6 +69,18 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
     return `${field.name}: faker.datatype.datetime()`;
   }
   if (field.type === 'Json') {
+    const docLines = field.documentation?.split('\n') || [];
+    const fake = docLines.find((line) => line.startsWith('FAKE:'));
+    if (fake) {
+      const fakeValue = fake.replace('FAKE:', '');
+      if (!fakeValue) {
+        logger.warn(
+          `Incorrect format for fake JSON. Field ${field.name} won't be generated. Example: ///[FAKE:{"test": "faker.lorem.word()"}]`,
+        );
+        return null;
+      }
+      return `${field.name}: ${fakeValue}`;
+    }
     return `${field.name}: faker.datatype.json()`;
   }
   logger.warn(
