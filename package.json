@@ -8,7 +8,7 @@
     "prisma-generator-fake-data": "dist/bin.js"
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">= 16.0.0"
   },
   "scripts": {
     "build": "npx tsc",
