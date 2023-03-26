@@ -24,6 +24,15 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
     if (field.name === 'email') {
       return `${field.name}: faker.internet.email()`;
     }
+    if (field.name === 'name') {
+      return `${field.name}: faker.name.fullName()`;
+    }
+    if (field.name === 'firstName') {
+      return `${field.name}: faker.name.firstName()`;
+    }
+    if (field.name === 'lastName') {
+      return `${field.name}: faker.name.lastName()`;
+    }
     return `${field.name}: faker.lorem.words(5)`;
   }
   if (field.type === 'Int' || field.type === 'BigInt') {

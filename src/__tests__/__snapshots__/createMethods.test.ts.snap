@@ -6,6 +6,10 @@ import { faker } from '@faker-js/faker';
 
 export function fakeUser(overrides?: Partial<Prisma.UserUncheckedCreateInput>) {
   return {
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
     string: faker.lorem.words(5),
     boolean: faker.datatype.boolean(),
     int: faker.datatype.number(),

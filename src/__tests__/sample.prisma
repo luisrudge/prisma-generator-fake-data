@@ -5,6 +5,10 @@ datasource db {
 
 model User {
   id                  String        @id @default(cuid())
+  email               String
+  name                String
+  firstName           String
+  lastName            String
   string              String
   stringWithDefault   String        @default("default")
   boolean             Boolean
