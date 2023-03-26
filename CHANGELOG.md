@@ -1,3 +1,9 @@
+## [0.3.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.2.0...v0.3.0) (2023-03-26)
+
+### Features
+
+- handle non-required fields ([4d60be7](https://github.com/luisrudge/prisma-generator-fake-data/commit/4d60be7ce259113157c3eba208ce5f986d5de738))
+
 ### 0.2.0 (2023-03-26)
 
 ##### New Features
