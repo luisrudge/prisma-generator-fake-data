@@ -14,7 +14,10 @@ generatorHandler({
     };
   },
   async onGenerate(options: GeneratorOptions) {
-    const fakeMethods = await createMethods(options.dmmf.datamodel);
+    const fakeMethods = await createMethods(
+      options.dmmf.datamodel,
+      options.generator.config.extraImport,
+    );
 
     await writeFileSafely(options.generator.output?.value!, fakeMethods);
   },

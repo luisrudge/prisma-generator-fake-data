@@ -9,11 +9,11 @@
 
 ## The easiest way to generate mock data based on your Prisma models!
 
-#### What is prisma-generator-fake-data?
+### What is prisma-generator-fake-data?
 
 It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-schema/generators) that uses [faker.js](https://fakerjs.dev/) to create realistic-looking fake data for your Prisma models. With this generator, you can quickly and easily create fake data for your Prisma models, without having to write any code.
 
-#### Get started
+### Get started
 
 - Setup your Prisma project as usual ([Get Started With Prisma](https://www.prisma.io/docs/getting-started))
 - Install this package
@@ -24,7 +24,6 @@ It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-
   ```prisma
   generator custom_generator {
       provider = "prisma-generator-fake-data"
-      /// File will be generated in this path
       output   = "../types/fake-data.ts"
   }
   ```
@@ -32,7 +31,7 @@ It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-
 
 You're all done!
 
-#### Usage
+### Usage
 
 Once the file is generated, you can import it in your project.
 
@@ -81,13 +80,22 @@ console.log(fakeUser());
 */
 ```
 
-#### Fields with special treatment:
+### Generator options
+
+| Option      | Required | Default            | Example                                                   | Description                                                                                                                                                                                         |
+| ----------- | -------- | ------------------ | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| output      | no       | `"./fake-data.ts"` | `"../types/fake-data.ts"`                                 | Path where the file will be exported to. Base folder is your prisma folder.                                                                                                                         |
+| extraImport | no       | `""`               | `"import {myCustomFunction} from '../utils/fakeImports'"` | This import will be added to your generated file. Useful when you want to use a custom function to generate fake JSON data. You can use your TypeScript aliases. Base folder is your prisma folder. |
+|             |          |                    |                                                           |                                                                                                                                                                                                     |
+
+### Fields with special treatment:
 
 - `name`, `fullName`, `firstName`, `lastName`, and `age` will use specific `faker-js` methods to appear more realistic.
-- If you have an optional Prisma field (e.g., `message String?`), the fake data will randomly return `undefined` for that property.
+- If you have an optional Prisma field (e.g., `message String?`), the fake data generator will randomly return `undefined` for that property.
 - If you have a `JSON` Prisma field, you can add your own data shape by adding a special comment above your field.
   - Example: `///FAKE:{test: faker.lorem.word()}`
   - Keep in mind that the generator will simply relay whatever is after the `FAKE:` string to your generated code, so it needs to be valid TypeScript.
+  - By using the `extraImport` generator option, you can create your own helper methods to generate fake data for your JSON fields
 
 <sup><sub>Inspired by https://github.com/toyamarinyon/prisma-factory-generator</sub></sup>
 
