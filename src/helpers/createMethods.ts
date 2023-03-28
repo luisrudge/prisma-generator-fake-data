@@ -1,6 +1,5 @@
 import { logger } from '@prisma/sdk';
 import { DMMF } from '@prisma/generator-helper';
-import { formatFile } from '../utils/formatFile';
 
 function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
   let nullHandling = '';
@@ -130,17 +129,17 @@ export async function createMethods(
       `export function fake${m.name}(overrides?: Partial<Omit<Prisma.${
         m.name
       }UncheckedCreateInput${omitFields}>>) {
-        return {
-          ${validFields.join(',\n')}${validFields.length > 0 ? ',' : ''}
-          ...overrides,
-        }
-      }`,
+  return {
+    ${validFields.join(',\n    ')}${validFields.length > 0 ? ',' : ''}
+    ...overrides,
+  }
+}`,
     );
   });
-  return await formatFile(`
+  return await `
   import type { Prisma } from '@prisma/client';
   import { faker } from '@faker-js/faker';
   ${extraImport || ''}
   
-  ${functions.join('\n')}`);
+  ${functions.join('\n')}`;
 }
