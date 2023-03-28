@@ -11,7 +11,7 @@
 
 ### What is prisma-generator-fake-data?
 
-It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-schema/generators) that uses [faker.js](https://fakerjs.dev/) to create realistic-looking fake data for your Prisma models. With this generator, you can quickly and easily create fake data for your Prisma models, without having to write any code.
+It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-schema/generators) that uses [faker.js](https://fakerjs.dev/) to create realistic-looking fake data for your Prisma models. With this generator, you can quickly and easily create fake data for your Prisma models, without having to write barely any code.
 
 ### Get started
 
@@ -30,6 +30,8 @@ It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-
 - Run `npx prisma generate`
 
 You're all done!
+
+> If you prefer, you can easily get started with [this CodeSandbox.](https://codesandbox.io/p/sandbox/prisma-generator-fake-data-example-xplkvs?file=%2Fscript.ts&selection=%5B%7B%22endColumn%22%3A6%2C%22endLineNumber%22%3A38%2C%22startColumn%22%3A6%2C%22startLineNumber%22%3A38%7D%5D)
 
 ### Usage
 
