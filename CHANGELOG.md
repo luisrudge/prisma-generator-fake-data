@@ -1,3 +1,9 @@
+### [0.4.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.4.0...v0.4.1) (2023-03-28)
+
+### Bug Fixes
+
+- remove prettier as dependency ([ed2ae92](https://github.com/luisrudge/prisma-generator-fake-data/commit/ed2ae92a39ec8a0141d270d5f60fd9d472de5ff3))
+
 ## [0.4.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.3.5...v0.4.0) (2023-03-27)
 
 ### Features
