@@ -1,12 +1,9 @@
-import { getDMMF, getSchemaSync } from '@prisma/sdk';
+import { getDMMF, getSchema } from '@prisma/internals';
 import path from 'path';
 
-const samplePrismaSchema = getSchemaSync(
-  path.join(__dirname, './sample.prisma'),
-);
-
-export function getSampleDMMF() {
+export async function getSampleDMMF() {
+  const schema = await getSchema(path.join(__dirname, './sample.prisma'));
   return getDMMF({
-    datamodel: samplePrismaSchema,
+    datamodel: schema,
   });
 }

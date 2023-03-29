@@ -1,4 +1,4 @@
-import { logger } from '@prisma/sdk';
+import { logger } from '@prisma/internals';
 import { DMMF } from '@prisma/generator-helper';
 
 function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
