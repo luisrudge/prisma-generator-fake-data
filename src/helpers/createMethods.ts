@@ -132,14 +132,14 @@ export async function createMethods(
   return {
     ${validFields.join(',\n    ')}${validFields.length > 0 ? ',' : ''}
     ...overrides,
-  }
+  };
 }`,
     );
   });
-  return await `
-  import type { Prisma } from '@prisma/client';
-  import { faker } from '@faker-js/faker';
-  ${extraImport || ''}
-  
-  ${functions.join('\n')}`;
+  return await `import type { Prisma } from '@prisma/client';
+import { faker } from '@faker-js/faker';
+${extraImport || ''}
+
+${functions.join('\n')}
+`;
 }
