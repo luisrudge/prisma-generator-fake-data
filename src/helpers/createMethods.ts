@@ -97,6 +97,7 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
 export async function createMethods(
   { enums, models }: DMMF.Datamodel,
   extraImport?: string,
+  extraExport?: string,
 ) {
   const functions: string[] = [];
 
@@ -139,6 +140,7 @@ export async function createMethods(
   return await `import type { Prisma } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 ${extraImport || ''}
+${extraExport || ''}
 
 ${functions.join('\n')}
 `;

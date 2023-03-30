@@ -1,6 +1,7 @@
 import type { Prisma } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 import { fakeSettings } from './fakeData.utils';
+export * from './fakeData.utils';
 
 export function fakeUser(
   overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput, ''>>,

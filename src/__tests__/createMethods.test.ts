@@ -6,7 +6,24 @@ test('createMethods with extraImport', async () => {
   const sampleDMMF = await getSampleDMMF();
   const extraImport = "import {myCustomFunction} from '../utils/fakeImports'";
   expect(
-    await createMethods(sampleDMMF.datamodel, extraImport),
+    await createMethods(sampleDMMF.datamodel, extraImport, undefined),
+  ).toMatchSnapshot();
+});
+
+test('createMethods with extraExport', async () => {
+  const sampleDMMF = await getSampleDMMF();
+  const extraExport = "export * from '../utils/fakeImports'";
+  expect(
+    await createMethods(sampleDMMF.datamodel, undefined, extraExport),
+  ).toMatchSnapshot();
+});
+
+test('createMethods with extraImport and extraExport', async () => {
+  const sampleDMMF = await getSampleDMMF();
+  const extraImport = "import {myCustomFunction} from '../utils/fakeImports'";
+  const extraExport = "export * from '../utils/fakeImports'";
+  expect(
+    await createMethods(sampleDMMF.datamodel, extraImport, extraExport),
   ).toMatchSnapshot();
 });
 

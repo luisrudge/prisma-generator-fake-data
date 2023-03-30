@@ -7,6 +7,7 @@ generator custom_generator {
   ///provider = "prisma-generator-fake-data"
   provider     = "ts-node ../src/bin.ts"
   extraImport = "import {fakeSettings} from './fakeData.utils'"
+  extraExport = "export * from './fakeData.utils'"
 }
 
 datasource db {

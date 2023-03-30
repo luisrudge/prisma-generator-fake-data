@@ -17,6 +17,7 @@ generatorHandler({
     const fakeMethods = await createMethods(
       options.dmmf.datamodel,
       options.generator.config.extraImport,
+      options.generator.config.extraExport,
     );
 
     await writeFileSafely(options.generator.output?.value!, fakeMethods);
