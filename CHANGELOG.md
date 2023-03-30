@@ -1,3 +1,9 @@
+## [0.5.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.4.1...v0.5.0) (2023-03-30)
+
+### Features
+
+- add extraExport field ([6558bce](https://github.com/luisrudge/prisma-generator-fake-data/commit/6558bcef6cb6877409bdf660505bc8487ec57613))
+
 ### [0.4.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.4.0...v0.4.1) (2023-03-28)
 
 ### Bug Fixes
