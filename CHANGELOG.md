@@ -1,3 +1,9 @@
+### [0.5.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.5.0...v0.5.1) (2023-03-31)
+
+### Bug Fixes
+
+- render enums with `as const` ([1e1946d](https://github.com/luisrudge/prisma-generator-fake-data/commit/1e1946d35fcb150256432344688261ac95109277))
+
 ## [0.5.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.4.1...v0.5.0) (2023-03-30)
 
 ### Features
