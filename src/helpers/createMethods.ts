@@ -17,7 +17,7 @@ function getFieldDefinition(field: DMMF.Field, enums: DMMF.DatamodelEnum[]) {
       const enumValuesAsString = enumValues
         .map((v) => `'${v.name}'`)
         .join(', ');
-      return `${field.name}: ${nullHandling}faker.helpers.arrayElement([${enumValuesAsString}])`;
+      return `${field.name}: ${nullHandling}faker.helpers.arrayElement([${enumValuesAsString}] as const)`;
     }
   }
   if (field.type === 'String') {

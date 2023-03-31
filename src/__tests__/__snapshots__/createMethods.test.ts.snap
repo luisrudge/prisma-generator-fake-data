@@ -33,8 +33,8 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
     json: {test: faker.lorem.word()},
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
-    enum: faker.helpers.arrayElement(['A', 'B', 'C']),
-    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C']),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     ...overrides,
   };
 }
@@ -80,8 +80,8 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
     json: {test: faker.lorem.word()},
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
-    enum: faker.helpers.arrayElement(['A', 'B', 'C']),
-    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C']),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     ...overrides,
   };
 }
@@ -127,8 +127,8 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
     json: {test: faker.lorem.word()},
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
-    enum: faker.helpers.arrayElement(['A', 'B', 'C']),
-    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C']),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     ...overrides,
   };
 }
@@ -174,8 +174,8 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
     json: {test: faker.lorem.word()},
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
-    enum: faker.helpers.arrayElement(['A', 'B', 'C']),
-    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C']),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     ...overrides,
   };
 }

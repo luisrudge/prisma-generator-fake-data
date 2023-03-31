@@ -12,7 +12,7 @@ export function fakeUser(
     age: faker.datatype.number({ min: 0, max: 99 }),
     settings: fakeSettings(),
     maybeString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
-    status: faker.helpers.arrayElement(['active', 'inactive']),
+    status: faker.helpers.arrayElement(['active', 'inactive'] as const),
     ...overrides,
   };
 }
