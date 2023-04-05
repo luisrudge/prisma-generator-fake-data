@@ -1,3 +1,13 @@
+## [0.6.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.5.0...v0.6.0) (2023-04-05)
+
+### Features
+
+- remove overrides and add fake\*Complete methods with foreign keys ([e370ab4](https://github.com/luisrudge/prisma-generator-fake-data/commit/e370ab4d42a505a72bb5290a6ef8dbd00813febc))
+
+### Bug Fixes
+
+- render enums with `as const` ([1e1946d](https://github.com/luisrudge/prisma-generator-fake-data/commit/1e1946d35fcb150256432344688261ac95109277))
+
 ### [0.5.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.5.0...v0.5.1) (2023-03-31)
 
 ### Bug Fixes
