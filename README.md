@@ -59,6 +59,14 @@ model User {
   ///FAKE:{notificationsEnabled: faker.datatype.boolean(), preferredColor: faker.color.rgb()}
   settings Json
   status   UserStatus
+  profile  Profile?
+}
+
+model Profile {
+  id                Int              @id @default(autoincrement())
+  someConfiguration Boolean
+  userId            String           @unique
+  user              User             @relation(fields: [userId], references: [id])
 }
 
 enum UserStatus {
@@ -68,16 +76,23 @@ enum UserStatus {
 ```
 
 ```ts
-import { fakeUser } from './prisma/fake-data'; //or your custom output path
+import { fakeUser, fakeProfileComplete } from './prisma/fake-data'; //or your custom output path
 
 console.log(fakeUser());
+console.log(fakeProfileComplete());
 /*
 {
-  email: 'Marianne_Zulauf96@yahoo.com',
-  name: 'Gerald Schulist',
-  age: 30,
-  settings: { notificationsEnabled: true, preferredColor: '#a7e5db' },
-  status: 'inactive'
+  email: 'Ella.Mayer@gmail.com',
+  name: 'Lana Gulgowski',
+  age: 81,
+  settings: { notificationsEnabled: true, preferredColor: '#ee5344' },
+  maybeString: undefined,
+  status: 'active'
+}
+{
+  id: 96601,
+  someConfiguration: true,
+  userId: '821cf67a-dd86-49d7-b0e4-9ad451ad173d'
 }
 */
 ```
