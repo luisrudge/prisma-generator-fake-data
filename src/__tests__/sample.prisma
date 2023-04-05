@@ -46,6 +46,11 @@ model User {
   relation2           UserRelation? @relation(name: "UserRelationToUser2")
 }
 
+model User2 {
+  id            Int            @id @default(autoincrement())
+  User2Relation User2Relation?
+}
+
 enum Enum {
   A
   B
@@ -58,4 +63,11 @@ model UserRelation {
   user    User   @relation(fields: [userId], references: [id], name: "UserRelationToUser1")
   userId2 String @unique
   user2   User   @relation(fields: [userId2], references: [id], name: "UserRelationToUser2")
+}
+
+model User2Relation {
+  id String @id @default(cuid())
+
+  user2Id Int   @unique
+  user    User2 @relation(fields: [user2Id], references: [id])
 }

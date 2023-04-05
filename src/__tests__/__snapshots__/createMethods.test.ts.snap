@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 
 export * from '../utils/fakeImports'
 
-export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput, ''>>) {
+export function fakeUser() {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
@@ -35,13 +35,64 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
     enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
-    ...overrides,
   };
 }
-export function fakeUserRelation(overrides?: Partial<Omit<Prisma.UserRelationUncheckedCreateInput, 'userId' | 'userId2'>>) {
+export function fakeUserComplete() {
   return {
-    
-    ...overrides,
+    id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    age: faker.datatype.number({min: 0, max: 99}),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    string: faker.lorem.words(5),
+    stringWithDefault: faker.lorem.words(5),
+    nullableString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
+    boolean: faker.datatype.boolean(),
+    booleanWithDefault: faker.datatype.boolean(),
+    nullableBoolean: faker.datatype.boolean() ? undefined : faker.datatype.boolean(),
+    int: faker.datatype.number(),
+    intWithDefault: faker.datatype.number(),
+    nullableInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    bigInt: faker.datatype.number(),
+    bigIntWithDefault: faker.datatype.number(),
+    nullableBigInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    float: faker.datatype.float(),
+    floatWithDefault: faker.datatype.float(),
+    nullableFloat: faker.datatype.boolean() ? undefined : faker.datatype.float(),
+    dateTime: faker.datatype.datetime(),
+    dateTimeWithDefault: faker.datatype.datetime(),
+    nullableDateTime: faker.datatype.boolean() ? undefined : faker.datatype.datetime(),
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    bigIntArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    floatArray: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()],
+    booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
+    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    json: {test: faker.lorem.word()},
+    jsonWithDefault: JSON.parse(faker.datatype.json()),
+    nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    enumWithDefault: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+  };
+}
+export function fakeUser2Complete() {
+  return {
+    id: faker.datatype.number(),
+  };
+}
+export function fakeUserRelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    userId: faker.datatype.uuid(),
+    userId2: faker.datatype.uuid(),
+  };
+}
+export function fakeUser2RelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    user2Id: faker.datatype.number(),
   };
 }
 "
@@ -53,7 +104,7 @@ import { faker } from '@faker-js/faker';
 import {myCustomFunction} from '../utils/fakeImports'
 
 
-export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput, ''>>) {
+export function fakeUser() {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
@@ -82,13 +133,64 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
     enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
-    ...overrides,
   };
 }
-export function fakeUserRelation(overrides?: Partial<Omit<Prisma.UserRelationUncheckedCreateInput, 'userId' | 'userId2'>>) {
+export function fakeUserComplete() {
   return {
-    
-    ...overrides,
+    id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    age: faker.datatype.number({min: 0, max: 99}),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    string: faker.lorem.words(5),
+    stringWithDefault: faker.lorem.words(5),
+    nullableString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
+    boolean: faker.datatype.boolean(),
+    booleanWithDefault: faker.datatype.boolean(),
+    nullableBoolean: faker.datatype.boolean() ? undefined : faker.datatype.boolean(),
+    int: faker.datatype.number(),
+    intWithDefault: faker.datatype.number(),
+    nullableInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    bigInt: faker.datatype.number(),
+    bigIntWithDefault: faker.datatype.number(),
+    nullableBigInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    float: faker.datatype.float(),
+    floatWithDefault: faker.datatype.float(),
+    nullableFloat: faker.datatype.boolean() ? undefined : faker.datatype.float(),
+    dateTime: faker.datatype.datetime(),
+    dateTimeWithDefault: faker.datatype.datetime(),
+    nullableDateTime: faker.datatype.boolean() ? undefined : faker.datatype.datetime(),
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    bigIntArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    floatArray: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()],
+    booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
+    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    json: {test: faker.lorem.word()},
+    jsonWithDefault: JSON.parse(faker.datatype.json()),
+    nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    enumWithDefault: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+  };
+}
+export function fakeUser2Complete() {
+  return {
+    id: faker.datatype.number(),
+  };
+}
+export function fakeUserRelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    userId: faker.datatype.uuid(),
+    userId2: faker.datatype.uuid(),
+  };
+}
+export function fakeUser2RelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    user2Id: faker.datatype.number(),
   };
 }
 "
@@ -100,7 +202,7 @@ import { faker } from '@faker-js/faker';
 import {myCustomFunction} from '../utils/fakeImports'
 export * from '../utils/fakeImports'
 
-export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput, ''>>) {
+export function fakeUser() {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
@@ -129,13 +231,64 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
     enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
-    ...overrides,
   };
 }
-export function fakeUserRelation(overrides?: Partial<Omit<Prisma.UserRelationUncheckedCreateInput, 'userId' | 'userId2'>>) {
+export function fakeUserComplete() {
   return {
-    
-    ...overrides,
+    id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    age: faker.datatype.number({min: 0, max: 99}),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    string: faker.lorem.words(5),
+    stringWithDefault: faker.lorem.words(5),
+    nullableString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
+    boolean: faker.datatype.boolean(),
+    booleanWithDefault: faker.datatype.boolean(),
+    nullableBoolean: faker.datatype.boolean() ? undefined : faker.datatype.boolean(),
+    int: faker.datatype.number(),
+    intWithDefault: faker.datatype.number(),
+    nullableInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    bigInt: faker.datatype.number(),
+    bigIntWithDefault: faker.datatype.number(),
+    nullableBigInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    float: faker.datatype.float(),
+    floatWithDefault: faker.datatype.float(),
+    nullableFloat: faker.datatype.boolean() ? undefined : faker.datatype.float(),
+    dateTime: faker.datatype.datetime(),
+    dateTimeWithDefault: faker.datatype.datetime(),
+    nullableDateTime: faker.datatype.boolean() ? undefined : faker.datatype.datetime(),
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    bigIntArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    floatArray: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()],
+    booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
+    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    json: {test: faker.lorem.word()},
+    jsonWithDefault: JSON.parse(faker.datatype.json()),
+    nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    enumWithDefault: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+  };
+}
+export function fakeUser2Complete() {
+  return {
+    id: faker.datatype.number(),
+  };
+}
+export function fakeUserRelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    userId: faker.datatype.uuid(),
+    userId2: faker.datatype.uuid(),
+  };
+}
+export function fakeUser2RelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    user2Id: faker.datatype.number(),
   };
 }
 "
@@ -147,7 +300,7 @@ import { faker } from '@faker-js/faker';
 
 
 
-export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInput, ''>>) {
+export function fakeUser() {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
@@ -176,13 +329,64 @@ export function fakeUser(overrides?: Partial<Omit<Prisma.UserUncheckedCreateInpu
     nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
     enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
     nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
-    ...overrides,
   };
 }
-export function fakeUserRelation(overrides?: Partial<Omit<Prisma.UserRelationUncheckedCreateInput, 'userId' | 'userId2'>>) {
+export function fakeUserComplete() {
   return {
-    
-    ...overrides,
+    id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    age: faker.datatype.number({min: 0, max: 99}),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    string: faker.lorem.words(5),
+    stringWithDefault: faker.lorem.words(5),
+    nullableString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
+    boolean: faker.datatype.boolean(),
+    booleanWithDefault: faker.datatype.boolean(),
+    nullableBoolean: faker.datatype.boolean() ? undefined : faker.datatype.boolean(),
+    int: faker.datatype.number(),
+    intWithDefault: faker.datatype.number(),
+    nullableInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    bigInt: faker.datatype.number(),
+    bigIntWithDefault: faker.datatype.number(),
+    nullableBigInt: faker.datatype.boolean() ? undefined : faker.datatype.number(),
+    float: faker.datatype.float(),
+    floatWithDefault: faker.datatype.float(),
+    nullableFloat: faker.datatype.boolean() ? undefined : faker.datatype.float(),
+    dateTime: faker.datatype.datetime(),
+    dateTimeWithDefault: faker.datatype.datetime(),
+    nullableDateTime: faker.datatype.boolean() ? undefined : faker.datatype.datetime(),
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    bigIntArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    floatArray: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()],
+    booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
+    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    json: {test: faker.lorem.word()},
+    jsonWithDefault: JSON.parse(faker.datatype.json()),
+    nullableJson: faker.datatype.boolean() ? undefined : JSON.parse(faker.datatype.json()),
+    enum: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    enumWithDefault: faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+    nullableEnum: faker.datatype.boolean() ? undefined : faker.helpers.arrayElement(['A', 'B', 'C'] as const),
+  };
+}
+export function fakeUser2Complete() {
+  return {
+    id: faker.datatype.number(),
+  };
+}
+export function fakeUserRelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    userId: faker.datatype.uuid(),
+    userId2: faker.datatype.uuid(),
+  };
+}
+export function fakeUser2RelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    user2Id: faker.datatype.number(),
   };
 }
 "
