@@ -1,3 +1,9 @@
+## [0.7.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.6.0...v0.7.0) (2023-04-06)
+
+### Features
+
+- render real enums; render optional fields as undefined; render default values when available ([70b21fc](https://github.com/luisrudge/prisma-generator-fake-data/commit/70b21fc0782c83f792c063227cabc5a617e674a3))
+
 ## [0.6.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.5.0...v0.6.0) (2023-04-05)
 
 ### Features
