@@ -24,6 +24,7 @@ model User {
   settings    Json
   maybeString String?
   status      UserStatus
+  status2     UserStatus @default(active)
   profile     Profile?
 }
 

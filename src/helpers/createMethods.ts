@@ -7,9 +7,35 @@ function getFieldDefinition(
   field: DMMF.Field,
   enums: DMMF.DatamodelEnum[],
 ) {
-  let nullHandling = '';
+  if (field.isId) {
+    return `${field.name}: ${
+      field.type === 'String'
+        ? 'faker.datatype.uuid()'
+        : 'faker.datatype.number()'
+    }`;
+  }
+  if (field.hasDefaultValue) {
+    if (field.isList) {
+      return `${field.name}: ${field.default?.toString() || '[]'}`;
+    }
+    if (['Json'].includes(field.type)) {
+      return `${field.name}: ${field.default?.toString() || '{}'}`;
+    }
+    if (field.kind === 'enum') {
+      return `${field.name}: ${field.type}.${field.default}`;
+    }
+    if (['Int', 'BigInt', 'Float', 'Decimal', 'Boolean'].includes(field.type)) {
+      return `${field.name}: ${field.default}`;
+    }
+    if (['String'].includes(field.type)) {
+      return `${field.name}: '${field.default}'`;
+    }
+    if (field.type === 'DateTime') {
+      return `${field.name}: new Date()`;
+    }
+  }
   if (!field.isRequired) {
-    nullHandling = `faker.datatype.boolean() ? undefined : `;
+    return `${field.name}: undefined`;
   }
   if (field.kind === 'enum') {
     const enumName = field.type;
@@ -20,20 +46,13 @@ function getFieldDefinition(
       );
     } else {
       const enumValuesAsString = enumValues
-        .map((v) => `'${v.name}'`)
+        .map((v) => `${enumName}.${v.name}`)
         .join(', ');
-      return `${field.name}: ${nullHandling}faker.helpers.arrayElement([${enumValuesAsString}] as const)`;
+      return `${field.name}: faker.helpers.arrayElement([${enumValuesAsString}] as const)`;
     }
   }
-  if (field.isId) {
-    return `${field.name}: ${nullHandling}${
-      field.type === 'String'
-        ? 'faker.datatype.uuid()'
-        : 'faker.datatype.number()'
-    }`;
-  }
   if (model.fields.some((it) => it.relationFromFields?.includes(field.name))) {
-    return `${field.name}: ${nullHandling}${
+    return `${field.name}: ${
       field.type === 'String'
         ? 'faker.datatype.uuid()'
         : 'faker.datatype.number()'
@@ -41,54 +60,54 @@ function getFieldDefinition(
   }
   if (field.type === 'String') {
     if (field.isList) {
-      return `${field.name}: ${nullHandling}faker.lorem.words(5).split(' ')`;
+      return `${field.name}: faker.lorem.words(5).split(' ')`;
     }
     if (field.name === 'email') {
-      return `${field.name}: ${nullHandling}faker.internet.email()`;
+      return `${field.name}: faker.internet.email()`;
     }
     if (field.name === 'name') {
-      return `${field.name}: ${nullHandling}faker.name.fullName()`;
+      return `${field.name}: faker.name.fullName()`;
     }
     if (field.name === 'firstName') {
-      return `${field.name}: ${nullHandling}faker.name.firstName()`;
+      return `${field.name}: faker.name.firstName()`;
     }
     if (field.name === 'lastName') {
-      return `${field.name}: ${nullHandling}faker.name.lastName()`;
+      return `${field.name}: faker.name.lastName()`;
     }
-    return `${field.name}: ${nullHandling}faker.lorem.words(5)`;
+    return `${field.name}: faker.lorem.words(5)`;
   }
   if (field.type === 'Int' || field.type === 'BigInt') {
     if (field.isList) {
-      return `${field.name}: ${nullHandling}[faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()]`;
+      return `${field.name}: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()]`;
     }
     if (field.name === 'age') {
-      return `${field.name}: ${nullHandling}faker.datatype.number({min: 0, max: 99})`;
+      return `${field.name}: faker.datatype.number({min: 0, max: 99})`;
     }
-    return `${field.name}: ${nullHandling}faker.datatype.number()`;
+    return `${field.name}: faker.datatype.number()`;
   }
   if (field.type === 'Float') {
     if (field.isList) {
-      return `${field.name}: ${nullHandling}[faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()]`;
+      return `${field.name}: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()]`;
     }
-    return `${field.name}: ${nullHandling}faker.datatype.float()`;
+    return `${field.name}: faker.datatype.float()`;
   }
   if (field.type === 'Boolean') {
     if (field.isList) {
-      return `${field.name}: ${nullHandling}[faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()]`;
+      return `${field.name}: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()]`;
     }
-    return `${field.name}: ${nullHandling}faker.datatype.boolean()`;
+    return `${field.name}: faker.datatype.boolean()`;
   }
   if (field.type === 'Decimal') {
     if (field.isList) {
-      return `${field.name}: ${nullHandling}[faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal()]`;
+      return `${field.name}: [faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal()]`;
     }
-    return `${field.name}: ${nullHandling}faker.datatype.hexaDecimal()`;
+    return `${field.name}: faker.datatype.hexaDecimal()`;
   }
   if (field.type === 'DateTime') {
     if (field.isList) {
-      return `${field.name}: ${nullHandling}[faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()]`;
+      return `${field.name}: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()]`;
     }
-    return `${field.name}: ${nullHandling}faker.datatype.datetime()`;
+    return `${field.name}: faker.datatype.datetime()`;
   }
   if (field.type === 'Json') {
     const docLines = field.documentation?.split('\n') || [];
@@ -101,9 +120,9 @@ function getFieldDefinition(
         );
         return null;
       }
-      return `${field.name}: ${nullHandling}${fakeValue}`;
+      return `${field.name}: ${fakeValue}`;
     }
-    return `${field.name}: ${nullHandling}JSON.parse(faker.datatype.json())`;
+    return `${field.name}: JSON.parse(faker.datatype.json())`;
   }
   logger.warn(
     `Type ${field.type}${field.isList ? '[]' : ''} (${
@@ -124,7 +143,8 @@ export async function createMethods(
     createFakeFunctionsWithoutFKs(models, m, enums, functions);
     createFakeFunctionsWithFKs(models, m, enums, functions);
   });
-  return await `import type { Prisma } from '@prisma/client';
+  const enumNames = enums.map((it) => it.name).join(', ');
+  return await `import { ${enumNames} } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 ${extraImport || ''}
 ${extraExport || ''}

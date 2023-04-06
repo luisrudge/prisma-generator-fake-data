@@ -1,4 +1,4 @@
-import type { Prisma } from '@prisma/client';
+import { UserStatus } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 import { fakeSettings } from './fakeData.utils';
 export * from './fakeData.utils';
@@ -9,8 +9,11 @@ export function fakeUser() {
     name: faker.name.fullName(),
     age: faker.datatype.number({ min: 0, max: 99 }),
     settings: fakeSettings(),
-    maybeString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
-    status: faker.helpers.arrayElement(['active', 'inactive'] as const),
+    maybeString: undefined,
+    status: faker.helpers.arrayElement([
+      UserStatus.active,
+      UserStatus.inactive,
+    ] as const),
   };
 }
 export function fakeUserComplete() {
@@ -20,8 +23,12 @@ export function fakeUserComplete() {
     name: faker.name.fullName(),
     age: faker.datatype.number({ min: 0, max: 99 }),
     settings: fakeSettings(),
-    maybeString: faker.datatype.boolean() ? undefined : faker.lorem.words(5),
-    status: faker.helpers.arrayElement(['active', 'inactive'] as const),
+    maybeString: undefined,
+    status: faker.helpers.arrayElement([
+      UserStatus.active,
+      UserStatus.inactive,
+    ] as const),
+    status2: UserStatus.active,
   };
 }
 export function fakeProfile() {
