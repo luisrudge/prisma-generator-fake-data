@@ -1,3 +1,9 @@
+## [0.8.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.7.0...v0.8.0) (2023-05-29)
+
+### Bug Fixes
+
+- render fake values for JSON fields with default values ([55fefba](https://github.com/luisrudge/prisma-generator-fake-data/commit/55fefba6be537e397bf8520a5d139b7c537e66e6))
+
 ## [0.7.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.6.0...v0.7.0) (2023-04-06)
 
 ### Features
