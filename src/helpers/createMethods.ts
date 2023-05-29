@@ -7,6 +7,10 @@ function getFieldDefinition(
   field: DMMF.Field,
   enums: DMMF.DatamodelEnum[],
 ) {
+  const docLines = field.documentation?.split('\n') || [];
+  const fakeLine = docLines.find((line) => line.startsWith('FAKE:'));
+  const fakeValue = fakeLine?.replace('FAKE:', '');
+
   if (field.isId) {
     return `${field.name}: ${
       field.type === 'String'
@@ -19,7 +23,7 @@ function getFieldDefinition(
       return `${field.name}: ${field.default?.toString() || '[]'}`;
     }
     if (['Json'].includes(field.type)) {
-      return `${field.name}: ${field.default?.toString() || '{}'}`;
+      return `${field.name}: ${fakeValue || field.default?.toString() || '{}'}`;
     }
     if (field.kind === 'enum') {
       return `${field.name}: ${field.type}.${field.default}`;
