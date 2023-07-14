@@ -1,3 +1,9 @@
+## [0.9.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.8.0...v0.9.0) (2023-07-14)
+
+### Features
+
+- add option to default to null instead of undefined fix [#11](https://github.com/luisrudge/prisma-generator-fake-data/issues/11) ([1dbf9d2](https://github.com/luisrudge/prisma-generator-fake-data/commit/1dbf9d2feb0f33b0c0de9e0abc006afcc9ec89b2))
+
 ## [0.8.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.7.0...v0.8.0) (2023-05-29)
 
 ### Bug Fixes
