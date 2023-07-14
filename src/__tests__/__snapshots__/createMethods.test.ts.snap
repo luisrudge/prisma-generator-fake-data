@@ -1,5 +1,104 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`createMethods with \`null\` as \`emptyValueAs\` 1`] = `
+"import { Enum } from '@prisma/client';
+import { faker } from '@faker-js/faker';
+
+
+
+export function fakeUser() {
+  return {
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    age: faker.datatype.number({min: 0, max: 99}),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    string: faker.lorem.words(5),
+    nullableString: null,
+    boolean: faker.datatype.boolean(),
+    nullableBoolean: null,
+    int: faker.datatype.number(),
+    nullableInt: null,
+    bigInt: faker.datatype.number(),
+    nullableBigInt: null,
+    float: faker.datatype.float(),
+    nullableFloat: null,
+    dateTime: faker.datatype.datetime(),
+    nullableDateTime: null,
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    bigIntArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    floatArray: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()],
+    booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
+    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    json: {test: faker.lorem.word()},
+    nullableJson: null,
+    enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    nullableEnum: null,
+  };
+}
+export function fakeUserComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    email: faker.internet.email(),
+    name: faker.name.fullName(),
+    age: faker.datatype.number({min: 0, max: 99}),
+    firstName: faker.name.firstName(),
+    lastName: faker.name.lastName(),
+    string: faker.lorem.words(5),
+    stringWithDefault: 'default',
+    nullableString: null,
+    boolean: faker.datatype.boolean(),
+    booleanWithDefault: true,
+    nullableBoolean: null,
+    int: faker.datatype.number(),
+    intWithDefault: 1,
+    nullableInt: null,
+    bigInt: faker.datatype.number(),
+    bigIntWithDefault: 1,
+    nullableBigInt: null,
+    float: faker.datatype.float(),
+    floatWithDefault: 1.1,
+    nullableFloat: null,
+    dateTime: faker.datatype.datetime(),
+    dateTimeWithDefault: new Date(),
+    nullableDateTime: null,
+    stringArray: faker.lorem.words(5).split(' '),
+    intArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    bigIntArray: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()],
+    floatArray: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()],
+    booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
+    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    json: {test: faker.lorem.word()},
+    jsonWithDefault: {},
+    jsonWithDefaultAndFake: {test2: faker.lorem.word()},
+    nullableJson: null,
+    enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumWithDefault: Enum.A,
+    nullableEnum: null,
+  };
+}
+export function fakeUser2Complete() {
+  return {
+    id: faker.datatype.number(),
+  };
+}
+export function fakeUserRelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    userId: faker.datatype.uuid(),
+    userId2: faker.datatype.uuid(),
+  };
+}
+export function fakeUser2RelationComplete() {
+  return {
+    id: faker.datatype.uuid(),
+    user2Id: faker.datatype.number(),
+  };
+}
+"
+`;
+
 exports[`createMethods with extraExport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';

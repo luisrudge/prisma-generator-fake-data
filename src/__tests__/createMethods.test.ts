@@ -33,3 +33,10 @@ test('createMethods without extraImport', async () => {
     await createMethods(sampleDMMF.datamodel, undefined),
   ).toMatchSnapshot();
 });
+
+test('createMethods with `null` as `emptyValueAs`', async () => {
+  const sampleDMMF = await getSampleDMMF();
+  expect(
+    await createMethods(sampleDMMF.datamodel, undefined, undefined, 'null'),
+  ).toMatchSnapshot();
+});

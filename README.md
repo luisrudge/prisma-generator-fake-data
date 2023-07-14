@@ -99,17 +99,18 @@ console.log(fakeProfileComplete());
 
 ### Generator options
 
-| Option      | Required | Default            | Example                                                   | Description                                                                                                                                                                                         |
-| ----------- | -------- | ------------------ | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| output      | no       | `"./fake-data.ts"` | `"../types/fake-data.ts"`                                 | Path where the file will be exported to. Base folder is your prisma folder.                                                                                                                         |
-| extraImport | no       | `""`               | `"import {myCustomFunction} from '../utils/fakeImports'"` | This import will be added to your generated file. Useful when you want to use a custom function to generate fake JSON data. You can use your TypeScript aliases. Base folder is your prisma folder. |
-| extraExport | no       | `""`               | `"export * from '../utils/fakeImports'"`                  | This export will be added to your generated file. Useful when you want to export all of the fake methods created by this generator from the same file. Base folder is your prisma folder.           |
-|             |          |                    |                                                           |                                                                                                                                                                                                     |
+| Option       | Required | Default            | Example                                                   | Description                                                                                                                                                                                                               |
+| ------------ | -------- | ------------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| output       | no       | `"./fake-data.ts"` | `"../types/fake-data.ts"`                                 | Path where the file will be exported to. Base folder is your prisma folder.                                                                                                                                               |
+| extraImport  | no       | `""`               | `"import {myCustomFunction} from '../utils/fakeImports'"` | This import will be added to your generated file. Useful when you want to use a custom function to generate fake JSON data. You can use your TypeScript aliases. Base folder is your prisma folder.                       |
+| extraExport  | no       | `""`               | `"export * from '../utils/fakeImports'"`                  | This export will be added to your generated file. Useful when you want to export all of the fake methods created by this generator from the same file. Base folder is your prisma folder.                                 |
+| emptyValueAs | no       | `"undefined"`      | `"null"`                                                  | By default, optional fields will be generated with `undefined`. You can change this behavior by overriding this parameter. You can use a function imported in `extraImport` or just pass a hardcoded value like `"null"`. |
+|              |          |                    |
 
 ### Fields with special treatment:
 
 - `name`, `fullName`, `firstName`, `lastName`, and `age` will use specific `faker-js` methods to appear more realistic.
-- If you have an optional Prisma field (e.g., `message String?`), the fake data generator will randomly return `undefined` for that property.
+- If you have an optional Prisma field (e.g., `message String?`), the fake data generator will always return `undefined` for that property (customizable through the `emptyValueAs` option).
 - If you have a `JSON` Prisma field, you can add your own data shape by adding a special comment above your field.
   - Example: `///FAKE:{test: faker.lorem.word()}`
   - Keep in mind that the generator will simply relay whatever is after the `FAKE:` string to your generated code, so it needs to be valid TypeScript.

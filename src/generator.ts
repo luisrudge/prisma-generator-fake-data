@@ -18,6 +18,7 @@ generatorHandler({
       options.dmmf.datamodel,
       options.generator.config.extraImport,
       options.generator.config.extraExport,
+      options.generator.config.emptyValueAs,
     );
 
     await writeFileSafely(options.generator.output?.value!, fakeMethods);

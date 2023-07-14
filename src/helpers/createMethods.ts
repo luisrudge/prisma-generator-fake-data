@@ -6,6 +6,7 @@ function getFieldDefinition(
   model: DMMF.Model,
   field: DMMF.Field,
   enums: DMMF.DatamodelEnum[],
+  emptyValueAs: string,
 ) {
   const docLines = field.documentation?.split('\n') || [];
   const fakeLine = docLines.find((line) => line.startsWith('FAKE:'));
@@ -39,7 +40,7 @@ function getFieldDefinition(
     }
   }
   if (!field.isRequired) {
-    return `${field.name}: undefined`;
+    return `${field.name}: ${emptyValueAs}`;
   }
   if (field.kind === 'enum') {
     const enumName = field.type;
@@ -140,12 +141,13 @@ export async function createMethods(
   { enums, models }: DMMF.Datamodel,
   extraImport?: string,
   extraExport?: string,
+  emptyValueAs = 'undefined',
 ) {
   const functions: string[] = [];
 
   models.forEach((m) => {
-    createFakeFunctionsWithoutFKs(models, m, enums, functions);
-    createFakeFunctionsWithFKs(models, m, enums, functions);
+    createFakeFunctionsWithoutFKs(models, m, enums, functions, emptyValueAs);
+    createFakeFunctionsWithFKs(models, m, enums, functions, emptyValueAs);
   });
   const enumNames = enums.map((it) => it.name).join(', ');
   return await `import { ${enumNames} } from '@prisma/client';
@@ -161,6 +163,7 @@ function createFakeFunctionsWithoutFKs(
   model: DMMF.Model,
   enums: DMMF.DatamodelEnum[],
   functions: string[],
+  emptyValueAs: string,
 ) {
   const validFields = model.fields
     .filter((field) => !field.isId)
@@ -171,7 +174,7 @@ function createFakeFunctionsWithoutFKs(
       });
     })
     .filter((field) => !field.hasDefaultValue)
-    .map((f) => getFieldDefinition(models, model, f, enums))
+    .map((f) => getFieldDefinition(models, model, f, enums, emptyValueAs))
     .filter(Boolean);
   if (validFields.length > 0) {
     functions.push(
@@ -189,10 +192,11 @@ function createFakeFunctionsWithFKs(
   model: DMMF.Model,
   enums: DMMF.DatamodelEnum[],
   functions: string[],
+  emptyValueAs: string,
 ) {
   const validFields = model.fields
     .filter((field) => field.kind === 'scalar' || field.kind === 'enum')
-    .map((f) => getFieldDefinition(models, model, f, enums))
+    .map((f) => getFieldDefinition(models, model, f, enums, emptyValueAs))
     .filter(Boolean);
   if (validFields.length > 0) {
     functions.push(
