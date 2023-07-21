@@ -1,3 +1,9 @@
+## [0.10.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.9.0...v0.10.0) (2023-07-21)
+
+### Features
+
+- upgrade to prisma 5 ([2f879a2](https://github.com/luisrudge/prisma-generator-fake-data/commit/2f879a21025d26e5bd57713c3fbe8b18a0451f7f))
+
 ## [0.9.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.8.0...v0.9.0) (2023-07-14)
 
 ### Features
