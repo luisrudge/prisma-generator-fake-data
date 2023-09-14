@@ -1,6 +1,6 @@
 import { logger } from '@prisma/internals';
 import { DMMF } from '@prisma/generator-helper';
-
+import { faker } from '@faker-js/faker';
 function getFieldDefinition(
   models: DMMF.Model[],
   model: DMMF.Model,
@@ -15,8 +15,8 @@ function getFieldDefinition(
   if (field.isId) {
     return `${field.name}: ${
       field.type === 'String'
-        ? 'faker.datatype.uuid()'
-        : 'faker.datatype.number()'
+        ? 'faker.string.uuid()'
+        : 'faker.number.int()'
     }`;
   }
   if (field.hasDefaultValue) {
@@ -29,6 +29,7 @@ function getFieldDefinition(
     if (field.kind === 'enum') {
       return `${field.name}: ${field.type}.${field.default}`;
     }
+    
     if (['Int', 'BigInt', 'Float', 'Decimal', 'Boolean'].includes(field.type)) {
       return `${field.name}: ${field.default}`;
     }
@@ -59,8 +60,8 @@ function getFieldDefinition(
   if (model.fields.some((it) => it.relationFromFields?.includes(field.name))) {
     return `${field.name}: ${
       field.type === 'String'
-        ? 'faker.datatype.uuid()'
-        : 'faker.datatype.number()'
+        ? 'faker.string.uuid()'
+        : 'faker.number.int()'
     }`;
   }
   if (field.type === 'String') {
@@ -70,31 +71,37 @@ function getFieldDefinition(
     if (field.name === 'email') {
       return `${field.name}: faker.internet.email()`;
     }
+    if (field.name === 'image' || field.name === 'avatar') {
+      return `${field.name}: faker.image.avatar()`;
+    }
+    if (field.name === 'username') {
+      return `${field.name}: faker.internet.username()`;
+    }
     if (field.name === 'name') {
-      return `${field.name}: faker.name.fullName()`;
+      return `${field.name}: faker.person.fullName()`;
     }
     if (field.name === 'firstName') {
-      return `${field.name}: faker.name.firstName()`;
+      return `${field.name}: faker.person.firstName()`;
     }
     if (field.name === 'lastName') {
-      return `${field.name}: faker.name.lastName()`;
+      return `${field.name}: faker.person.lastName()`;
     }
     return `${field.name}: faker.lorem.words(5)`;
   }
   if (field.type === 'Int' || field.type === 'BigInt') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number(),faker.datatype.number()]`;
+      return `${field.name}: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()]`;
     }
     if (field.name === 'age') {
-      return `${field.name}: faker.datatype.number({min: 0, max: 99})`;
+      return `${field.name}: faker.number.int({min: 0, max: 99})`;
     }
-    return `${field.name}: faker.datatype.number()`;
+    return `${field.name}: faker.number.int()`;
   }
   if (field.type === 'Float') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float(),faker.datatype.float()]`;
+      return `${field.name}: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()]`;
     }
-    return `${field.name}: faker.datatype.float()`;
+    return `${field.name}: faker.number.float()`;
   }
   if (field.type === 'Boolean') {
     if (field.isList) {
@@ -110,9 +117,9 @@ function getFieldDefinition(
   }
   if (field.type === 'DateTime') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()]`;
+      return `${field.name}: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()]`;
     }
-    return `${field.name}: faker.datatype.datetime()`;
+    return `${field.name}: faker.date.anytime()`;
   }
   if (field.type === 'Json') {
     const docLines = field.documentation?.split('\n') || [];
@@ -127,7 +134,7 @@ function getFieldDefinition(
       }
       return `${field.name}: ${fakeValue}`;
     }
-    return `${field.name}: JSON.parse(faker.datatype.json())`;
+    return `${field.name}: JSON.stringify(${generateRandomJson()})`;
   }
   logger.warn(
     `Type ${field.type}${field.isList ? '[]' : ''} (${
@@ -207,4 +214,17 @@ function createFakeFunctionsWithFKs(
 }`,
     );
   }
+}
+
+function generateRandomJson(): string {
+  const obj = {
+    foo: faker.string.uuid(),
+    bar: faker.number.int(),
+    bike: faker.number.hex(),
+    a: faker.string.alphanumeric(),
+    b: faker.number.float(),
+    name: faker.person.firstName(),
+    prop: faker.string.binary(),
+  };
+  return JSON.stringify(obj);
 }
