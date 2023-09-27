@@ -7,7 +7,7 @@ export function fakeUser() {
   return {
     email: faker.internet.email(),
     name: faker.name.fullName(),
-    age: faker.datatype.number({ min: 0, max: 99 }),
+    age: faker.number.int({ min: 0, max: 99 }),
     settings: fakeSettings(),
     maybeString: undefined,
     status: faker.helpers.arrayElement([
@@ -21,7 +21,7 @@ export function fakeUserComplete() {
     id: faker.datatype.uuid(),
     email: faker.internet.email(),
     name: faker.name.fullName(),
-    age: faker.datatype.number({ min: 0, max: 99 }),
+    age: faker.number.int({ min: 0, max: 99 }),
     settings: fakeSettings(),
     maybeString: undefined,
     status: faker.helpers.arrayElement([
@@ -38,7 +38,7 @@ export function fakeProfile() {
 }
 export function fakeProfileComplete() {
   return {
-    id: faker.datatype.number(),
+    id: faker.number.int(),
     someConfiguration: faker.datatype.boolean(),
     userId: faker.datatype.uuid(),
   };
@@ -50,8 +50,8 @@ export function fakeProfileSettings() {
 }
 export function fakeProfileSettingsComplete() {
   return {
-    id: faker.datatype.number(),
+    id: faker.number.int(),
     someConfiguration: faker.datatype.boolean(),
-    profileId: faker.datatype.number(),
+    profileId: faker.number.int(),
   };
 }

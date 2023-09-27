@@ -18,7 +18,7 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.6.0",
+    "@faker-js/faker": "^8.0.2",
     "@prisma/client": "^5.0.0",
     "@prisma/generator-helper": "^5.0.0",
     "@prisma/internals": "^5.0.0",
