@@ -1,3 +1,13 @@
+## [0.11.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.10.0...v0.11.0) (2023-09-27)
+
+### Features
+
+- update to use faker 7.x -> 9.x ([261e7a2](https://github.com/luisrudge/prisma-generator-fake-data/commit/261e7a2ccb8f486d89dd22b7efbff57c98063a44))
+
+### Bug Fixes
+
+- remove settings.json ([67633df](https://github.com/luisrudge/prisma-generator-fake-data/commit/67633df103d94677370188bea3a37a86ca11ed91))
+
 ## [0.10.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.9.0...v0.10.0) (2023-07-21)
 
 ### Features
