@@ -9,10 +9,10 @@ import { faker } from '@faker-js/faker';
 export function fakeUser() {
   return {
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     nullableString: null,
     boolean: faker.datatype.boolean(),
@@ -23,14 +23,14 @@ export function fakeUser() {
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     nullableJson: null,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
@@ -39,12 +39,12 @@ export function fakeUser() {
 }
 export function fakeUserComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     stringWithDefault: 'default',
     nullableString: null,
@@ -60,7 +60,7 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: null,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
@@ -68,7 +68,7 @@ export function fakeUserComplete() {
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     jsonWithDefault: {},
     jsonWithDefaultAndFake: {test2: faker.lorem.word()},
@@ -85,14 +85,14 @@ export function fakeUser2Complete() {
 }
 export function fakeUserRelationComplete() {
   return {
-    id: faker.datatype.uuid(),
-    userId: faker.datatype.uuid(),
-    userId2: faker.datatype.uuid(),
+    id: faker.string.uuid(),
+    userId: faker.string.uuid(),
+    userId2: faker.string.uuid(),
   };
 }
 export function fakeUser2RelationComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     user2Id: faker.number.int(),
   };
 }
@@ -108,10 +108,10 @@ export * from '../utils/fakeImports'
 export function fakeUser() {
   return {
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     nullableString: undefined,
     boolean: faker.datatype.boolean(),
@@ -122,14 +122,14 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
@@ -138,12 +138,12 @@ export function fakeUser() {
 }
 export function fakeUserComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     stringWithDefault: 'default',
     nullableString: undefined,
@@ -159,7 +159,7 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -167,7 +167,7 @@ export function fakeUserComplete() {
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     jsonWithDefault: {},
     jsonWithDefaultAndFake: {test2: faker.lorem.word()},
@@ -184,14 +184,14 @@ export function fakeUser2Complete() {
 }
 export function fakeUserRelationComplete() {
   return {
-    id: faker.datatype.uuid(),
-    userId: faker.datatype.uuid(),
-    userId2: faker.datatype.uuid(),
+    id: faker.string.uuid(),
+    userId: faker.string.uuid(),
+    userId2: faker.string.uuid(),
   };
 }
 export function fakeUser2RelationComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     user2Id: faker.number.int(),
   };
 }
@@ -207,10 +207,10 @@ import {myCustomFunction} from '../utils/fakeImports'
 export function fakeUser() {
   return {
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     nullableString: undefined,
     boolean: faker.datatype.boolean(),
@@ -221,14 +221,14 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
@@ -237,12 +237,12 @@ export function fakeUser() {
 }
 export function fakeUserComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     stringWithDefault: 'default',
     nullableString: undefined,
@@ -258,7 +258,7 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -266,7 +266,7 @@ export function fakeUserComplete() {
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     jsonWithDefault: {},
     jsonWithDefaultAndFake: {test2: faker.lorem.word()},
@@ -283,14 +283,14 @@ export function fakeUser2Complete() {
 }
 export function fakeUserRelationComplete() {
   return {
-    id: faker.datatype.uuid(),
-    userId: faker.datatype.uuid(),
-    userId2: faker.datatype.uuid(),
+    id: faker.string.uuid(),
+    userId: faker.string.uuid(),
+    userId2: faker.string.uuid(),
   };
 }
 export function fakeUser2RelationComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     user2Id: faker.number.int(),
   };
 }
@@ -306,10 +306,10 @@ export * from '../utils/fakeImports'
 export function fakeUser() {
   return {
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     nullableString: undefined,
     boolean: faker.datatype.boolean(),
@@ -320,14 +320,14 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
@@ -336,12 +336,12 @@ export function fakeUser() {
 }
 export function fakeUserComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     stringWithDefault: 'default',
     nullableString: undefined,
@@ -357,7 +357,7 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -365,7 +365,7 @@ export function fakeUserComplete() {
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     jsonWithDefault: {},
     jsonWithDefaultAndFake: {test2: faker.lorem.word()},
@@ -382,14 +382,14 @@ export function fakeUser2Complete() {
 }
 export function fakeUserRelationComplete() {
   return {
-    id: faker.datatype.uuid(),
-    userId: faker.datatype.uuid(),
-    userId2: faker.datatype.uuid(),
+    id: faker.string.uuid(),
+    userId: faker.string.uuid(),
+    userId2: faker.string.uuid(),
   };
 }
 export function fakeUser2RelationComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     user2Id: faker.number.int(),
   };
 }
@@ -405,10 +405,10 @@ import { faker } from '@faker-js/faker';
 export function fakeUser() {
   return {
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     nullableString: undefined,
     boolean: faker.datatype.boolean(),
@@ -419,14 +419,14 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
@@ -435,12 +435,12 @@ export function fakeUser() {
 }
 export function fakeUserComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({min: 0, max: 99}),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
     string: faker.lorem.words(5),
     stringWithDefault: 'default',
     nullableString: undefined,
@@ -456,7 +456,7 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
-    dateTime: faker.datatype.datetime(),
+    dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -464,7 +464,7 @@ export function fakeUserComplete() {
     bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
-    dateTimeArray: [faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime(),faker.datatype.datetime()],
+    dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
     json: {test: faker.lorem.word()},
     jsonWithDefault: {},
     jsonWithDefaultAndFake: {test2: faker.lorem.word()},
@@ -481,14 +481,14 @@ export function fakeUser2Complete() {
 }
 export function fakeUserRelationComplete() {
   return {
-    id: faker.datatype.uuid(),
-    userId: faker.datatype.uuid(),
-    userId2: faker.datatype.uuid(),
+    id: faker.string.uuid(),
+    userId: faker.string.uuid(),
+    userId2: faker.string.uuid(),
   };
 }
 export function fakeUser2RelationComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     user2Id: faker.number.int(),
   };
 }
