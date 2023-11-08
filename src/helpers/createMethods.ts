@@ -75,7 +75,7 @@ function getFieldDefinition(
       return `${field.name}: faker.image.avatar()`;
     }
     if (field.name === 'username') {
-      return `${field.name}: faker.internet.username()`;
+      return `${field.name}: faker.internet.userName()`;
     }
     if (field.name === 'name') {
       return `${field.name}: faker.person.fullName()`;
