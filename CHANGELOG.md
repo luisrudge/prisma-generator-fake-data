@@ -1,3 +1,9 @@
+### [0.11.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.11.0...v0.11.1) (2023-11-08)
+
+### Bug Fixes
+
+- Update createMethods.ts wrong function call ([efa2928](https://github.com/luisrudge/prisma-generator-fake-data/commit/efa2928426c3a948f7f5a5844e228536cfeba46e))
+
 ## [0.11.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.10.0...v0.11.0) (2023-09-27)
 
 ### Features
