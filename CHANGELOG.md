@@ -1,5 +1,9 @@
 ## [0.12.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.11.1...v0.12.0) (2023-11-15)
 
+### Features
+
+- add support for enum arrays with default value ([eab337c](https://github.com/luisrudge/prisma-generator-fake-data/commit/eab337cac34b4da9b250142925dda629e8c75fc3))
+
 ### [0.11.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.11.0...v0.11.1) (2023-11-08)
 
 ### Bug Fixes
