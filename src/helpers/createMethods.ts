@@ -20,6 +20,18 @@ function getFieldDefinition(
     }`;
   }
   if (field.hasDefaultValue) {
+    if (field.isList && field.kind === 'enum') {
+      const enumName = field.type;
+      const enumValues = enums.find((it) => it.name === enumName)?.values || [];
+      if (enumValues.length === 0) {
+        logger.warn(
+          `Enum ${enumName} has no enum values. Field ${field.name} won't be generated.`,
+        );
+      }
+      else {
+          return `${field.name}: [${enumName}.${field.default}]`;
+      }
+    }
     if (field.isList) {
       return `${field.name}: ${field.default?.toString() || '[]'}`;
     }

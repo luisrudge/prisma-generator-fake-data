@@ -46,6 +46,7 @@ model User {
   nullableEnum           Enum?
   relation               UserRelation? @relation(name: "UserRelationToUser1")
   relation2              UserRelation? @relation(name: "UserRelationToUser2")
+  enums                  Enum[]        @default([A])
 }
 
 model User2 {
