@@ -161,6 +161,7 @@ export async function createMethods(
   extraImport?: string,
   extraExport?: string,
   emptyValueAs = 'undefined',
+  clientImportPath: string = '@prisma/client',
 ) {
   const functions: string[] = [];
 
@@ -169,7 +170,7 @@ export async function createMethods(
     createFakeFunctionsWithFKs(models, m, enums, functions, emptyValueAs);
   });
   const enumNames = enums.map((it) => it.name).join(', ');
-  return await `import { ${enumNames} } from '@prisma/client';
+  return await `import { ${enumNames} } from '${clientImportPath}';
 import { faker } from '@faker-js/faker';
 ${extraImport || ''}
 ${extraExport || ''}

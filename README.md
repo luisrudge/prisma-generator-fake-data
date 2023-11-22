@@ -118,5 +118,5 @@ console.log(fakeProfileComplete());
 
 <sup><sub>Inspired by https://github.com/toyamarinyon/prisma-factory-generator</sub></sup>
 
-<sup><sub>This generator was bootstraped using [create-prisma-generator](https://github.com/YassinEldeeb/create-prisma-generator)
+<sup><sub>This generator was bootstrapped using [create-prisma-generator](https://github.com/YassinEldeeb/create-prisma-generator)
 </sub></sup>
