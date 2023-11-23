@@ -1,3 +1,9 @@
+## [0.13.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.12.0...v0.13.0) (2023-11-23)
+
+### Features
+
+- Use optional client output location when it exists ([130bed7](https://github.com/luisrudge/prisma-generator-fake-data/commit/130bed7c9a3b4a5bdfee8f7bbf785f7eb7a2bb8d))
+
 ## [0.12.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.11.1...v0.12.0) (2023-11-15)
 
 ### Features
