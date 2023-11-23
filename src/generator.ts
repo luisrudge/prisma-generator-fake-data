@@ -1,6 +1,7 @@
 import { generatorHandler, GeneratorOptions } from '@prisma/generator-helper';
 import { GENERATOR_NAME } from './constants';
 import { createMethods } from './helpers/createMethods';
+import { extractClientPath } from './utils/generatorUtils';
 import { writeFileSafely } from './utils/writeFileSafely';
 import invariant from 'tiny-invariant';
 
@@ -36,6 +37,7 @@ generatorHandler({
       options.generator.config.extraImport as string | undefined,
       options.generator.config.extraExport as string | undefined,
       options.generator.config.emptyValueAs as string | undefined,
+      extractClientPath(options),
     );
 
     await writeFileSafely(options.generator.output?.value!, fakeMethods);
