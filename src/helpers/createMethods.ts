@@ -12,6 +12,10 @@ function getFieldDefinition(
   const fakeLine = docLines.find((line) => line.startsWith('FAKE:'));
   const fakeValue = fakeLine?.replace('FAKE:', '');
 
+  if (fakeValue) {
+    return `${field.name}: ${fakeValue}`;
+  }
+
   if (field.isId) {
     return `${field.name}: ${
       field.type === 'String'

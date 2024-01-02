@@ -56,6 +56,9 @@ model User {
   id       String        @id @default(cuid())
   email    String        @unique
   name     String
+  /// Use comments to specify the faker method. For example:
+  ///FAKE:faker.location.streetAddress({ useFullAddress: true })
+  address  String
   ///FAKE:{notificationsEnabled: faker.datatype.boolean(), preferredColor: faker.color.rgb()}
   settings Json
   status   UserStatus
