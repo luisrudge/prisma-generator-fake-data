@@ -13,7 +13,7 @@ function getFieldDefinition(
   const fakeValue = fakeLine?.replace('FAKE:', '');
 
   if(fakeLine && !fakeValue) {
-    logger.warn(`${field.name} appears to have a '///FAKE:' comment but is missing a method or JSON after it.`)
+    logger.warn(`${model.name}.${field.name} appears to have a '///FAKE:' comment but is missing a method or JSON after it.`)
   }
 
   if (fakeValue) {
