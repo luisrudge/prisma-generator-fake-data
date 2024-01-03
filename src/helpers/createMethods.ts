@@ -12,6 +12,10 @@ function getFieldDefinition(
   const fakeLine = docLines.find((line) => line.startsWith('FAKE:'));
   const fakeValue = fakeLine?.replace('FAKE:', '');
 
+  if(fakeLine && !fakeValue) {
+    logger.warn(`${field.name} appears to have a '///FAKE:' comment but is missing a method or JSON after it.`)
+  }
+
   if (fakeValue) {
     return `${field.name}: ${fakeValue}`;
   }
@@ -138,18 +142,6 @@ function getFieldDefinition(
     return `${field.name}: faker.date.anytime()`;
   }
   if (field.type === 'Json') {
-    const docLines = field.documentation?.split('\n') || [];
-    const fake = docLines.find((line) => line.startsWith('FAKE:'));
-    if (fake) {
-      const fakeValue = fake.replace('FAKE:', '');
-      if (!fakeValue) {
-        logger.warn(
-          `Incorrect format for fake JSON. Field ${field.name} won't be generated. Example: ///[FAKE:{"test": "faker.lorem.word()"}]`,
-        );
-        return null;
-      }
-      return `${field.name}: ${fakeValue}`;
-    }
     return `${field.name}: JSON.stringify(${generateRandomJson()})`;
   }
   logger.warn(
