@@ -25,6 +25,9 @@ model User {
   float                  Float
   floatWithDefault       Float         @default(1.1)
   nullableFloat          Float?
+  decimal                Decimal
+  decimalWithDefault     Decimal       @default(1.23)
+  nullableDecimal        Decimal?
   dateTime               DateTime
   dateTimeWithDefault    DateTime      @default(now())
   nullableDateTime       DateTime?
