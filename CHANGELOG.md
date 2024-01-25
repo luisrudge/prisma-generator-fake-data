@@ -1,3 +1,9 @@
+### [0.14.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.0...v0.14.1) (2024-01-25)
+
+### Bug Fixes
+
+- Correctly generate import path ([0ff1424](https://github.com/luisrudge/prisma-generator-fake-data/commit/0ff142467ea4a96195ed4b9528c531a4c3c70d92))
+
 ## [0.14.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.13.0...v0.14.0) (2024-01-25)
 
 ### Features
