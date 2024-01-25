@@ -3,6 +3,7 @@
 exports[`createMethods with \`null\` as \`emptyValueAs\` 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 
 
 
@@ -23,6 +24,8 @@ export function fakeUser() {
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: null,
     dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
@@ -60,6 +63,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: null,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: null,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
@@ -103,6 +109,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with custom clientImportPath 1`] = `
 "import { Enum } from './src/generated/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 
 
 
@@ -123,6 +130,8 @@ export function fakeUser() {
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: null,
     dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
@@ -160,6 +169,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: null,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: null,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
@@ -203,6 +215,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with default clientImportPath 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 
 
 
@@ -223,6 +236,8 @@ export function fakeUser() {
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: null,
     dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
@@ -260,6 +275,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: null,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: null,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
@@ -303,6 +321,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with extraExport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 
 export * from '../utils/fakeImports'
 
@@ -323,6 +342,8 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -360,6 +381,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
@@ -403,6 +427,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with extraImport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 import {myCustomFunction} from '../utils/fakeImports'
 
 
@@ -423,6 +448,8 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -460,6 +487,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
@@ -503,6 +533,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with extraImport and extraExport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 import {myCustomFunction} from '../utils/fakeImports'
 export * from '../utils/fakeImports'
 
@@ -523,6 +554,8 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -560,6 +593,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
@@ -603,6 +639,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods without extraImport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 
 
 
@@ -623,6 +660,8 @@ export function fakeUser() {
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
@@ -660,6 +699,9 @@ export function fakeUserComplete() {
     float: faker.number.float(),
     floatWithDefault: 1.1,
     nullableFloat: undefined,
+    decimal: new Decimal(faker.number.float()),
+    decimalWithDefault: new Decimal(1.23),
+    nullableDecimal: undefined,
     dateTime: faker.date.anytime(),
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,

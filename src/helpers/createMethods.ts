@@ -43,8 +43,11 @@ function getFieldDefinition(
       return `${field.name}: ${field.type}.${field.default}`;
     }
     
-    if (['Int', 'BigInt', 'Float', 'Decimal', 'Boolean'].includes(field.type)) {
+    if (['Int', 'BigInt', 'Float', 'Boolean'].includes(field.type)) {
       return `${field.name}: ${field.default}`;
+    }
+    if (['Decimal'].includes(field.type)) {
+      return `${field.name}: new Decimal(${field.default})`;
     }
     if (['String'].includes(field.type)) {
       return `${field.name}: '${field.default}'`;
@@ -124,9 +127,9 @@ function getFieldDefinition(
   }
   if (field.type === 'Decimal') {
     if (field.isList) {
-      return `${field.name}: [faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal(),faker.datatype.hexaDecimal()]`;
+      return `${field.name}: [new Decimal(faker.number.float()),new Decimal(faker.number.float()),new Decimal(faker.number.float()),new Decimal(faker.number.float()),new Decimal(faker.number.float())]`;
     }
-    return `${field.name}: faker.datatype.hexaDecimal()`;
+    return `${field.name}: new Decimal(faker.number.float())`;
   }
   if (field.type === 'DateTime') {
     if (field.isList) {
@@ -173,6 +176,7 @@ export async function createMethods(
   const enumNames = enums.map((it) => it.name).join(', ');
   return await `import { ${enumNames} } from '${clientImportPath}';
 import { faker } from '@faker-js/faker';
+import Decimal from 'decimal.js;
 ${extraImport || ''}
 ${extraExport || ''}
 
