@@ -29,7 +29,8 @@ function getFieldDefinition(
         );
       }
       else {
-          return `${field.name}: [${enumName}.${field.default}]`;
+          const defaults = field.default.map((d) => `${enumName}.${d}`).join(', ');
+          return `${field.name}: [${defaults}]`;
       }
     }
     if (field.isList) {
