@@ -44,13 +44,25 @@ test('createMethods with `null` as `emptyValueAs`', async () => {
 test('createMethods with default clientImportPath', async () => {
   const sampleDMMF = await getSampleDMMF();
   expect(
-    await createMethods(sampleDMMF.datamodel, undefined, undefined, 'null', undefined),
+    await createMethods(
+      sampleDMMF.datamodel,
+      undefined,
+      undefined,
+      'null',
+      undefined,
+    ),
   ).toMatchSnapshot();
 });
 
 test('createMethods with custom clientImportPath', async () => {
   const sampleDMMF = await getSampleDMMF();
   expect(
-    await createMethods(sampleDMMF.datamodel, undefined, undefined, 'null', './src/generated/client'),
+    await createMethods(
+      sampleDMMF.datamodel,
+      undefined,
+      undefined,
+      'null',
+      './src/generated/client',
+    ),
   ).toMatchSnapshot();
 });

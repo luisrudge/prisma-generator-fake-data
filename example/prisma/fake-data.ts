@@ -1,4 +1,4 @@
-import { UserStatus } from '@prisma/client';
+import { UserStatus } from '/Users/luisrudge/code/oss/prisma-generator-fake-data/example/node_modules/@prisma/client';
 import { faker } from '@faker-js/faker';
 import { fakeSettings } from './fakeData.utils';
 export * from './fakeData.utils';
@@ -6,9 +6,10 @@ export * from './fakeData.utils';
 export function fakeUser() {
   return {
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({ min: 0, max: 99 }),
     settings: fakeSettings(),
+    ok: faker.number.int(),
     maybeString: undefined,
     status: faker.helpers.arrayElement([
       UserStatus.active,
@@ -18,11 +19,12 @@ export function fakeUser() {
 }
 export function fakeUserComplete() {
   return {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     email: faker.internet.email(),
-    name: faker.name.fullName(),
+    name: faker.person.fullName(),
     age: faker.number.int({ min: 0, max: 99 }),
     settings: fakeSettings(),
+    ok: faker.number.int(),
     maybeString: undefined,
     status: faker.helpers.arrayElement([
       UserStatus.active,
@@ -40,7 +42,7 @@ export function fakeProfileComplete() {
   return {
     id: faker.number.int(),
     someConfiguration: faker.datatype.boolean(),
-    userId: faker.datatype.uuid(),
+    userId: faker.string.uuid(),
   };
 }
 export function fakeProfileSettings() {

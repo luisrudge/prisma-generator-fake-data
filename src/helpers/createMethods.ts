@@ -14,9 +14,7 @@ function getFieldDefinition(
 
   if (field.isId) {
     return `${field.name}: ${
-      field.type === 'String'
-        ? 'faker.string.uuid()'
-        : 'faker.number.int()'
+      field.type === 'String' ? 'faker.string.uuid()' : 'faker.number.int()'
     }`;
   }
   if (field.hasDefaultValue) {
@@ -27,10 +25,11 @@ function getFieldDefinition(
         logger.warn(
           `Enum ${enumName} has no enum values. Field ${field.name} won't be generated.`,
         );
-      }
-      else {
-          const defaults = field.default.map((d) => `${enumName}.${d}`).join(', ');
-          return `${field.name}: [${defaults}]`;
+      } else {
+        const defaults = (field.default as DMMF.FieldDefaultScalar[])
+          ?.map((d) => `${enumName}.${d}`)
+          .join(', ');
+        return `${field.name}: [${defaults}]`;
       }
     }
     if (field.isList) {
@@ -42,12 +41,15 @@ function getFieldDefinition(
     if (field.kind === 'enum') {
       return `${field.name}: ${field.type}.${field.default}`;
     }
-    
-    if (['Int', 'BigInt', 'Float', 'Boolean'].includes(field.type)) {
+
+    if (['Int', 'Float', 'Boolean'].includes(field.type)) {
       return `${field.name}: ${field.default}`;
     }
     if (['Decimal'].includes(field.type)) {
       return `${field.name}: new Decimal(${field.default})`;
+    }
+    if (['BigInt'].includes(field.type)) {
+      return `${field.name}: BigInt(${field.default})`;
     }
     if (['String'].includes(field.type)) {
       return `${field.name}: '${field.default}'`;
@@ -75,9 +77,7 @@ function getFieldDefinition(
   }
   if (model.fields.some((it) => it.relationFromFields?.includes(field.name))) {
     return `${field.name}: ${
-      field.type === 'String'
-        ? 'faker.string.uuid()'
-        : 'faker.number.int()'
+      field.type === 'String' ? 'faker.string.uuid()' : 'faker.number.int()'
     }`;
   }
   if (field.type === 'String') {
@@ -104,7 +104,7 @@ function getFieldDefinition(
     }
     return `${field.name}: faker.lorem.words(5)`;
   }
-  if (field.type === 'Int' || field.type === 'BigInt') {
+  if (field.type === 'Int') {
     if (field.isList) {
       return `${field.name}: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()]`;
     }
@@ -112,6 +112,12 @@ function getFieldDefinition(
       return `${field.name}: faker.number.int({min: 0, max: 99})`;
     }
     return `${field.name}: faker.number.int()`;
+  }
+  if (field.type === 'BigInt') {
+    if (field.isList) {
+      return `${field.name}: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())]`;
+    }
+    return `${field.name}: BigInt(faker.number.int())`;
   }
   if (field.type === 'Float') {
     if (field.isList) {
@@ -176,7 +182,7 @@ export async function createMethods(
   const enumNames = enums.map((it) => it.name).join(', ');
   return await `import { ${enumNames} } from '${clientImportPath}';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 ${extraImport || ''}
 ${extraExport || ''}
 

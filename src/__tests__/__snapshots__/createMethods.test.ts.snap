@@ -3,7 +3,7 @@
 exports[`createMethods with \`null\` as \`emptyValueAs\` 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 
 
 
@@ -20,7 +20,7 @@ export function fakeUser() {
     nullableBoolean: null,
     int: faker.number.int(),
     nullableInt: null,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
@@ -30,7 +30,7 @@ export function fakeUser() {
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -38,6 +38,7 @@ export function fakeUser() {
     nullableJson: null,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: null,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -57,8 +58,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: null,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: null,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -71,7 +72,7 @@ export function fakeUserComplete() {
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -82,7 +83,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: null,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -109,7 +111,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with custom clientImportPath 1`] = `
 "import { Enum } from './src/generated/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 
 
 
@@ -126,7 +128,7 @@ export function fakeUser() {
     nullableBoolean: null,
     int: faker.number.int(),
     nullableInt: null,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
@@ -136,7 +138,7 @@ export function fakeUser() {
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -144,6 +146,7 @@ export function fakeUser() {
     nullableJson: null,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: null,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -163,8 +166,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: null,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: null,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -177,7 +180,7 @@ export function fakeUserComplete() {
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -188,7 +191,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: null,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -215,7 +219,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with default clientImportPath 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 
 
 
@@ -232,7 +236,7 @@ export function fakeUser() {
     nullableBoolean: null,
     int: faker.number.int(),
     nullableInt: null,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: null,
     float: faker.number.float(),
     nullableFloat: null,
@@ -242,7 +246,7 @@ export function fakeUser() {
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -250,6 +254,7 @@ export function fakeUser() {
     nullableJson: null,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: null,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -269,8 +274,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: null,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: null,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -283,7 +288,7 @@ export function fakeUserComplete() {
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -294,7 +299,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: null,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -321,7 +327,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with extraExport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 
 export * from '../utils/fakeImports'
 
@@ -338,7 +344,7 @@ export function fakeUser() {
     nullableBoolean: undefined,
     int: faker.number.int(),
     nullableInt: undefined,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
@@ -348,7 +354,7 @@ export function fakeUser() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -356,6 +362,7 @@ export function fakeUser() {
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: undefined,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -375,8 +382,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: undefined,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: undefined,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -389,7 +396,7 @@ export function fakeUserComplete() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -400,7 +407,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -427,7 +435,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with extraImport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 import {myCustomFunction} from '../utils/fakeImports'
 
 
@@ -444,7 +452,7 @@ export function fakeUser() {
     nullableBoolean: undefined,
     int: faker.number.int(),
     nullableInt: undefined,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
@@ -454,7 +462,7 @@ export function fakeUser() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -462,6 +470,7 @@ export function fakeUser() {
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: undefined,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -481,8 +490,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: undefined,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: undefined,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -495,7 +504,7 @@ export function fakeUserComplete() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -506,7 +515,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -533,7 +543,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods with extraImport and extraExport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 import {myCustomFunction} from '../utils/fakeImports'
 export * from '../utils/fakeImports'
 
@@ -550,7 +560,7 @@ export function fakeUser() {
     nullableBoolean: undefined,
     int: faker.number.int(),
     nullableInt: undefined,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
@@ -560,7 +570,7 @@ export function fakeUser() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -568,6 +578,7 @@ export function fakeUser() {
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: undefined,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -587,8 +598,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: undefined,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: undefined,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -601,7 +612,7 @@ export function fakeUserComplete() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -612,7 +623,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -639,7 +651,7 @@ export function fakeUser2RelationComplete() {
 exports[`createMethods without extraImport 1`] = `
 "import { Enum } from '@prisma/client';
 import { faker } from '@faker-js/faker';
-import Decimal from 'decimal.js;
+import Decimal from 'decimal.js';
 
 
 
@@ -656,7 +668,7 @@ export function fakeUser() {
     nullableBoolean: undefined,
     int: faker.number.int(),
     nullableInt: undefined,
-    bigInt: faker.number.int(),
+    bigInt: BigInt(faker.number.int()),
     nullableBigInt: undefined,
     float: faker.number.float(),
     nullableFloat: undefined,
@@ -666,7 +678,7 @@ export function fakeUser() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -674,6 +686,7 @@ export function fakeUser() {
     nullableJson: undefined,
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     nullableEnum: undefined,
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
   };
 }
 export function fakeUserComplete() {
@@ -693,8 +706,8 @@ export function fakeUserComplete() {
     int: faker.number.int(),
     intWithDefault: 1,
     nullableInt: undefined,
-    bigInt: faker.number.int(),
-    bigIntWithDefault: 1,
+    bigInt: BigInt(faker.number.int()),
+    bigIntWithDefault: BigInt(1),
     nullableBigInt: undefined,
     float: faker.number.float(),
     floatWithDefault: 1.1,
@@ -707,7 +720,7 @@ export function fakeUserComplete() {
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
     intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
-    bigIntArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
     dateTimeArray: [faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime(),faker.date.anytime()],
@@ -718,7 +731,8 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A, Enum.B],
+    enums: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
+    enumsWithDefault: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
