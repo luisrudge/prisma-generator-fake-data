@@ -1,3 +1,15 @@
+## [0.14.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.13.0...v0.14.0) (2024-01-25)
+
+### Features
+
+- Support array of default enums https://github.com/luisrudge/prisma-generator-fake-data/pull/22
+- Generate Decimals using Decimal.js #21 https://github.com/luisrudge/prisma-generator-fake-data/pull/21
+- Allow overriding faker method using prisma comment #20
+
+### Bug Fixes
+
+- fix BigInt generation, fix example folder ([82e0d4e](https://github.com/luisrudge/prisma-generator-fake-data/commit/82e0d4ecb7c6ce0730edb6c1fe9dede85fc89522))
+
 ## [0.13.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.12.0...v0.13.0) (2023-11-23)
 
 ### Features
