@@ -76,7 +76,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: null,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -176,7 +176,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: null,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -276,7 +276,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: null,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -376,7 +376,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -476,7 +476,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -576,7 +576,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
@@ -676,7 +676,7 @@ export function fakeUserComplete() {
     enum: faker.helpers.arrayElement([Enum.A, Enum.B, Enum.C] as const),
     enumWithDefault: Enum.A,
     nullableEnum: undefined,
-    enums: [Enum.A],
+    enums: [Enum.A, Enum.B],
   };
 }
 export function fakeUser2Complete() {
