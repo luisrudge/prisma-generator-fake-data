@@ -11,7 +11,10 @@ export function extractClientPath(options: GeneratorOptions) {
    * the user folder etc). If we detect that, we just return
    * the @prisma/client string
    */
-  if (clientPath?.includes('node_modules/@prisma/client')) {
+  if (
+    clientPath?.includes('node_modules/@prisma/client') || //unix path
+    clientPath?.includes('node_modules\\@prisma\\client') //windows path
+  ) {
     return '@prisma/client';
   }
 
