@@ -22,7 +22,7 @@ function getFieldDefinition(
 
   if (field.isId) {
     return `${field.name}: ${
-      field.type === 'String' ? 'faker.string.uuid()' : 'faker.number.int()'
+      field.type === 'String' ? 'faker.string.uuid()' : 'faker.number.int({ max: 2147483647 })'
     }`;
   }
   if (field.hasDefaultValue) {
@@ -114,7 +114,7 @@ function getFieldDefinition(
   }
   if (field.type === 'Int') {
     if (field.isList) {
-      return `${field.name}: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()]`;
+      return `${field.name}: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })]`;
     }
     if (field.name === 'age') {
       return `${field.name}: faker.number.int({min: 0, max: 99})`;

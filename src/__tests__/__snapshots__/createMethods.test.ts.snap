@@ -30,7 +30,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -73,7 +73,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -91,7 +91,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
@@ -140,7 +140,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -183,7 +183,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -201,7 +201,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
@@ -250,7 +250,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -293,7 +293,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: null,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -311,7 +311,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
@@ -360,7 +360,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -403,7 +403,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -421,7 +421,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
@@ -470,7 +470,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -513,7 +513,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -531,7 +531,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
@@ -580,7 +580,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -623,7 +623,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -641,7 +641,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
@@ -690,7 +690,7 @@ export function fakeUser() {
     dateTime: faker.date.anytime(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -733,7 +733,7 @@ export function fakeUserComplete() {
     dateTimeWithDefault: new Date(),
     nullableDateTime: undefined,
     stringArray: faker.lorem.words(5).split(' '),
-    intArray: [faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int(),faker.number.int()],
+    intArray: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })],
     bigIntArray: [BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int()),BigInt(faker.number.int())],
     floatArray: [faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float(),faker.number.float()],
     booleanArray: [faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean(),faker.datatype.boolean()],
@@ -751,7 +751,7 @@ export function fakeUserComplete() {
 }
 export function fakeUser2Complete() {
   return {
-    id: faker.number.int(),
+    id: faker.number.int({ max: 2147483647 }),
   };
 }
 export function fakeUserRelationComplete() {
