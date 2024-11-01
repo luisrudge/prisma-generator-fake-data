@@ -1,6 +1,9 @@
 import { logger } from '@prisma/internals';
 import { DMMF } from '@prisma/generator-helper';
 import { faker } from '@faker-js/faker';
+
+const MAX_INT = 2147483647;
+
 function getFieldDefinition(
   models: DMMF.Model[],
   model: DMMF.Model,
@@ -12,8 +15,10 @@ function getFieldDefinition(
   const fakeLine = docLines.find((line) => line.startsWith('FAKE:'));
   const fakeValue = fakeLine?.replace('FAKE:', '');
 
-  if(fakeLine && !fakeValue) {
-    logger.warn(`${model.name}.${field.name} appears to have a '///FAKE:' comment but is missing a method or JSON after it.`)
+  if (fakeLine && !fakeValue) {
+    logger.warn(
+      `${model.name}.${field.name} appears to have a '///FAKE:' comment but is missing a method or JSON after it.`,
+    );
   }
 
   if (fakeValue) {
@@ -22,7 +27,9 @@ function getFieldDefinition(
 
   if (field.isId) {
     return `${field.name}: ${
-      field.type === 'String' ? 'faker.string.uuid()' : 'faker.number.int({ max: 2147483647 })'
+      field.type === 'String'
+        ? 'faker.string.uuid()'
+        : `faker.number.int({ max: ${MAX_INT} })`
     }`;
   }
   if (field.hasDefaultValue) {
@@ -114,7 +121,7 @@ function getFieldDefinition(
   }
   if (field.type === 'Int') {
     if (field.isList) {
-      return `${field.name}: [faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 }),faker.number.int({ max: 2147483647 })]`;
+      return `${field.name}: [faker.number.int({ max: ${MAX_INT} }),faker.number.int({ max: ${MAX_INT} }),faker.number.int({ max: ${MAX_INT} }),faker.number.int({ max: ${MAX_INT} }),faker.number.int({ max: ${MAX_INT} })]`;
     }
     if (field.name === 'age') {
       return `${field.name}: faker.number.int({min: 0, max: 99})`;
