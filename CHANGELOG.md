@@ -1,3 +1,9 @@
+### [0.14.3](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.2...v0.14.3) (2024-11-01)
+
+### Bug Fixes
+
+- Integer data type fields should not be returning bigint's ([8c15f32](https://github.com/luisrudge/prisma-generator-fake-data/commit/8c15f324793795b833f76bc48b1418f05fca4e32))
+
 ### [0.14.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.1...v0.14.2) (2024-03-22)
 
 ### Bug Fixes
