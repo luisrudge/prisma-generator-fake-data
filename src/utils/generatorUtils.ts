@@ -1,16 +1,12 @@
 import { GeneratorOptions } from '@prisma/generator-helper';
+import { relative, dirname } from 'path';
 
 export function extractClientPath(options: GeneratorOptions) {
+  const targetPath = options.generator.output?.value!;
   const clientPath = options.otherGenerators.find(
     (g) => g?.provider?.value === 'prisma-client-js',
   )?.output?.value;
 
-  /**
-   * not sure what changed, but this value was undefined before
-   * and now it's set to the full path of the client (including
-   * the user folder etc). If we detect that, we just return
-   * the @prisma/client string
-   */
   if (
     clientPath?.includes('node_modules/@prisma/client') || //unix path
     clientPath?.includes('node_modules\\@prisma\\client') //windows path
@@ -18,5 +14,10 @@ export function extractClientPath(options: GeneratorOptions) {
     return '@prisma/client';
   }
 
-  return clientPath || undefined;
+  if (!clientPath) {
+    return undefined;
+  }
+
+  const targetDir = dirname(targetPath);
+  return relative(targetDir, clientPath);
 }
