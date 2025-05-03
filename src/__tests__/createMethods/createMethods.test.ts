@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest';
-import { createMethods } from '../helpers/createMethods';
+import { createMethods } from '../../helpers/createMethods';
 import { getSampleDMMF } from './testUtils';
 
 test('createMethods with extraImport', async () => {

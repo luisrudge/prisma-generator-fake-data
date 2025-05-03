@@ -1,0 +1,24 @@
+generator client01 {
+    provider = "prisma-client-js"
+}
+
+generator custom_generator01 {
+    provider = "ts-node ./src/bin.ts"
+    output   = "../types/fake-data.ts"
+}
+
+datasource db01 {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum Enum01 {
+    A
+    B
+    C
+}
+
+model TestModel01 {
+    id      Int    @id
+    variant Enum01
+}
