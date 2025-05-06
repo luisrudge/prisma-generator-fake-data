@@ -8,7 +8,7 @@
 
 ### Features
 
-- Add support for prisma 6.7.0+ ([#29](https://github.com/luisrudge/prisma-generator-fake-data/issues/29)) ([c0b070b](https://github.com/luisrudge/prisma-generator-fake-data/commit/c0b070b8b663e72b09808dfcb37a77517a51a6f7))
+- Add support for prisma 6.7.0+ ([#29](https://github.com/luisrudge/prisma-generator-fake-data/issues/29)) ([c0b070b](https://github.com/luisrudge/prisma-generator-fake-data/commit/c0b070b8b663e72b09808dfcb37a77517a51a6f7)) (thanks @fxdave)
 
 ### [0.14.3](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.2...v0.14.3) (2024-11-01)
 
