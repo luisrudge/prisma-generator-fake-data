@@ -1,7 +1,7 @@
 {
   "name": "prisma-generator-fake-data",
   "description": "The easiest way to generate mock data based on your Prisma models!",
-  "version": "0.14.3",
+  "version": "0.15.0",
   "main": "dist/generator.js",
   "license": "MIT",
   "bin": {

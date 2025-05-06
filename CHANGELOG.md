@@ -1,3 +1,15 @@
+# Changelog
+
+## [0.15.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.3...v0.15.0) (2025-05-06)
+
+### ⚠️ BREAKING CHANGES ⚠️
+
+- This version requires Prisma 6.7.0 or higher. If you're using an older version of Prisma, please stay on version 0.14.3.
+
+### Features
+
+- Add support for prisma 6.7.0+ ([#29](https://github.com/luisrudge/prisma-generator-fake-data/issues/29)) ([c0b070b](https://github.com/luisrudge/prisma-generator-fake-data/commit/c0b070b8b663e72b09808dfcb37a77517a51a6f7))
+
 ### [0.14.3](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.2...v0.14.3) (2024-11-01)
 
 ### Bug Fixes
