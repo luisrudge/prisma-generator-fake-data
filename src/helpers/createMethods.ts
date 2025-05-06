@@ -5,10 +5,10 @@ import { faker } from '@faker-js/faker';
 const MAX_INT = 2147483647;
 
 function getFieldDefinition(
-  models: DMMF.Model[],
-  model: DMMF.Model,
-  field: DMMF.Field,
-  enums: DMMF.DatamodelEnum[],
+  models: DMMF.Datamodel['models'],
+  model: DMMF.Datamodel['models'][number],
+  field: DMMF.Datamodel['models'][number]['fields'][number],
+  enums: DMMF.Datamodel['enums'],
   emptyValueAs: string,
 ) {
   const docLines = field.documentation?.split('\n') || [];
@@ -193,9 +193,9 @@ ${functions.join('\n')}
 `;
 }
 function createFakeFunctionsWithoutFKs(
-  models: DMMF.Model[],
-  model: DMMF.Model,
-  enums: DMMF.DatamodelEnum[],
+  models: DMMF.Datamodel['models'],
+  model: DMMF.Datamodel['models'][number],
+  enums: DMMF.Datamodel['enums'],
   functions: string[],
   emptyValueAs: string,
 ) {
@@ -222,9 +222,9 @@ function createFakeFunctionsWithoutFKs(
 }
 
 function createFakeFunctionsWithFKs(
-  models: DMMF.Model[],
-  model: DMMF.Model,
-  enums: DMMF.DatamodelEnum[],
+  models: DMMF.Datamodel['models'],
+  model: DMMF.Datamodel['models'][number],
+  enums: DMMF.Datamodel['enums'],
   functions: string[],
   emptyValueAs: string,
 ) {
