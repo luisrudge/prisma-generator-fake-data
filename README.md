@@ -17,9 +17,12 @@ It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-
 
 - Setup your Prisma project as usual ([Get Started With Prisma](https://www.prisma.io/docs/getting-started))
 - Install this package
+
   - `npm install -D prisma-generator-fake-data`
   - `yarn add -D prisma-generator-fake-data`
   - `pnpm install -D prisma-generator-fake-data`
+  - `bun add -D prisma-generator-fake-data`
+
 - Modify your Prisma model file
   ```prisma
   generator custom_generator {
