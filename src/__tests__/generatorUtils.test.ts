@@ -61,10 +61,10 @@ test('extractClientPath returns relative path when client is in a custom locatio
     otherGenerators: [
       {
         provider: { value: 'prisma-client-js' },
-        output: { value: '/path/to/custom/client' },
+        output: { value: '/path/to/custom-client' },
       },
     ],
   } as unknown as GeneratorOptions;
 
-  expect(extractClientPath(options)).toBe('custom/client');
+  expect(extractClientPath(options)).toBe('custom-client/client');
 });

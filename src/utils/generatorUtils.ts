@@ -19,5 +19,5 @@ export function extractClientPath(options: GeneratorOptions) {
   }
 
   const targetDir = dirname(targetPath);
-  return relative(targetDir, clientPath);
+  return relative(targetDir, `${clientPath}/client`);
 }
