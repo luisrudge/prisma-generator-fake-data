@@ -1,5 +1,5 @@
 import { GeneratorOptions } from '@prisma/generator-helper';
-import { relative, dirname } from 'path';
+import { relative, dirname, sep } from 'path';
 
 export function extractClientPath(options: GeneratorOptions) {
   const targetPath = options.generator.output?.value!;
@@ -19,5 +19,8 @@ export function extractClientPath(options: GeneratorOptions) {
   }
 
   const targetDir = dirname(targetPath);
-  return relative(targetDir, clientPath);
+  const relativePath = relative(targetDir, `${clientPath}/client`);
+  return relativePath.startsWith(`..`)
+    ? relativePath
+    : `.${sep}${relativePath}`;
 }
