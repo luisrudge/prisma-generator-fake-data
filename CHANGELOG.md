@@ -1,10 +1,14 @@
 # Changelog
 
+## [0.16.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.0...v0.16.1) (2025-09-18)
+
+Re-release with new code.
+
 ## [0.16.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.15.0...v0.16.0) (2025-09-17)
 
 ### Bug Fixes
 
-* fix import in generated file when prisma client uses custom output ([#30](https://github.com/luisrudge/prisma-generator-fake-data/issues/30)) ([2540104](https://github.com/luisrudge/prisma-generator-fake-data/commit/2540104a5e40e50a07aca135d93a47701ee64672))
+- fix import in generated file when prisma client uses custom output ([#30](https://github.com/luisrudge/prisma-generator-fake-data/issues/30)) ([2540104](https://github.com/luisrudge/prisma-generator-fake-data/commit/2540104a5e40e50a07aca135d93a47701ee64672))
 
 ## [0.15.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.14.3...v0.15.0) (2025-05-06)
 
