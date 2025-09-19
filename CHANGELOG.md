@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.16.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.1...v0.16.2) (2025-09-19)
+
+### Bug Fixes
+
+* fix code generation on windows ([3bd1b1d](https://github.com/luisrudge/prisma-generator-fake-data/commit/3bd1b1dd34819bba783d5255a5b536a8a5418b3a))
+
 ## [0.16.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.0...v0.16.1) (2025-09-18)
 
 Re-release with new code.
