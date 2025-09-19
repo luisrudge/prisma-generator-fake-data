@@ -20,7 +20,8 @@ export function extractClientPath(options: GeneratorOptions) {
 
   const targetDir = dirname(targetPath);
   const relativePath = relative(targetDir, `${clientPath}/client`);
-  return relativePath.startsWith(`..`)
-    ? relativePath
-    : `.${sep}${relativePath}`;
+  const normalizedPath = relativePath.replace(/\\/g, '/');
+  return normalizedPath.startsWith('..')
+    ? normalizedPath
+    : `./${normalizedPath}`;
 }

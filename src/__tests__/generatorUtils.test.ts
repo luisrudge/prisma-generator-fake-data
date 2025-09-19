@@ -1,4 +1,4 @@
-import { test, expect } from 'vitest';
+import { test, expect, vi } from 'vitest';
 import { GeneratorOptions } from '@prisma/generator-helper';
 import { extractClientPath } from '../utils/generatorUtils';
 
@@ -97,3 +97,28 @@ test.each([
     expect(extractClientPath(options)).toBe(expectedPath);
   },
 );
+
+test('extractClientPath normalizes Windows paths to use forward slashes', () => {
+  const options = {
+    generator: {
+      name: 'test-generator',
+      provider: { value: 'test-provider' },
+      output: { value: 'C:\\project\\output' },
+    },
+    otherGenerators: [
+      {
+        provider: { value: 'prisma-client' },
+        output: { value: 'C:\\project\\client' },
+      },
+    ],
+  } as unknown as GeneratorOptions;
+
+  const result = extractClientPath(options);
+
+  // The key test: result should not contain backslashes
+  expect(result).not.toContain('\\');
+  // Should contain forward slashes instead
+  expect(result).toContain('/');
+  // Should be a properly formatted relative path
+  expect(result).toMatch(/^\.\.?\/.*\/client$/);
+});
