@@ -1,6 +1,6 @@
-import { logger } from '@prisma/internals';
-import { DMMF } from '@prisma/generator-helper';
 import { faker } from '@faker-js/faker';
+import { DMMF } from '@prisma/generator-helper';
+import { logger } from '@prisma/internals';
 
 const MAX_INT = 2147483647;
 
@@ -106,7 +106,7 @@ function getFieldDefinition(
       return `${field.name}: faker.image.avatar()`;
     }
     if (field.name === 'username') {
-      return `${field.name}: faker.internet.userName()`;
+      return `${field.name}: faker.internet.username()`;
     }
     if (field.name === 'name') {
       return `${field.name}: faker.person.fullName()`;
