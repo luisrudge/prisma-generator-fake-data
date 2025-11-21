@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.17.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.1...v0.16.2) (2025-11-21)
+
+### Bug Fixes
+
+* upgrade fakerjs to v10 ([#31](https://github.com/luisrudge/prisma-generator-fake-data/issues/31)) ([7aa91bc](https://github.com/luisrudge/prisma-generator-fake-data/commit/7aa91bcbf30133b3dc92a1330bd4447f82c68d9e))
+## [0.16.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.1...v0.16.2) (2025-09-19)
+
+### Bug Fixes
+
+* fix code generation on windows ([3bd1b1d](https://github.com/luisrudge/prisma-generator-fake-data/commit/3bd1b1dd34819bba783d5255a5b536a8a5418b3a))
+
 ## [0.16.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.1...v0.16.2) (2025-09-19)
 
 ### Bug Fixes
