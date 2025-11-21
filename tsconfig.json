@@ -13,7 +13,7 @@
     "removeComments": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "outDir": "./dist",
     "rootDir": "./src",
     "newLine": "lf"
