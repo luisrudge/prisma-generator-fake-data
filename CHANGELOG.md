@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.18.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.17.0...v0.18.0) (2025-12-10)
+
 ## [0.17.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.16.1...v0.16.2) (2025-11-21)
 
 ### Bug Fixes
