@@ -74,6 +74,9 @@ function getFieldDefinition(
     }
   }
   if (!field.isRequired) {
+    if (field.type === 'Json' && emptyValueAs !== 'undefined') {
+      return `${field.name}: undefined`;
+    }
     return `${field.name}: ${emptyValueAs}`;
   }
   if (field.kind === 'enum') {
