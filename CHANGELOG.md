@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.18.0...v0.18.1) (2025-12-11)
+
+### Reverts
+
+- Revert "Force Json values to always be undefined even when another emptyValueAs param is provided" ([9ad14f3](https://github.com/luisrudge/prisma-generator-fake-data/commit/9ad14f3))
+
 ## [0.18.0](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.17.0...v0.18.0) (2025-12-10)
 
 ### Bug Fixes
