@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.18.2](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.18.0...v0.18.2) (2025-12-12)
+
+### Reverts
+
+* force Json values to always be undefined ([7554510](https://github.com/luisrudge/prisma-generator-fake-data/commit/755451058c3fb22598a1ac7f6de9fb185e7e1404))
+
 ## [0.18.1](https://github.com/luisrudge/prisma-generator-fake-data/compare/v0.18.0...v0.18.1) (2025-12-11)
 
 ### Reverts
