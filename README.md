@@ -5,7 +5,7 @@
 <sup><sub>_Generated with Nano Banana Pro._</sub></sup>
 
 ![npm](https://img.shields.io/npm/v/prisma-generator-fake-data)
-![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/luisrudge/prisma-generator-fake-data/CI.yml?branch=main)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/kritikio/prisma-generator-fake-data/CI.yml?branch=main)
 
 ## The easiest way to generate mock data based on your Prisma models!
 

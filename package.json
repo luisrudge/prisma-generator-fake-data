@@ -38,10 +38,10 @@
     "vite": "^8.3.2",
     "vitest": "^5.0.3"
   },
-  "homepage": "https://github.com/luisrudge/prisma-generator-fake-data",
+  "homepage": "https://github.com/kritikio/prisma-generator-fake-data",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luisrudge/prisma-generator-fake-data.git"
+    "url": "git+https://github.com/kritikio/prisma-generator-fake-data.git"
   },
   "author": "Luis Rudge <luis@luisrudge.net>",
   "keywords": [
