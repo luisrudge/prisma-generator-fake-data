@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.19.0](https://github.com/kritikio/prisma-generator-fake-data/compare/v0.18.3...v0.19.0) (2026-10-15)
+
+### Bug Fixes
+
+* emit JSON field faker calls as code strings to prevent regeneration churn ([04dbd44](https://github.com/kritikio/prisma-generator-fake-data/commit/04dbd445b6c25fca760df634a27b1eb39813ae87))
+
 ## [0.18.3](https://github.com/kritikio/prisma-generator-fake-data/compare/v0.18.2...v0.18.3) (2026-02-10)
 
 ## [0.18.2](https://github.com/kritikio/prisma-generator-fake-data/compare/v0.18.0...v0.18.2) (2025-12-12)
