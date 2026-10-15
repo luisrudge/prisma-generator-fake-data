@@ -5,16 +5,16 @@
   "main": "src/app.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "tsx index.ts"
   },
   "dependencies": {
-    "@prisma/client": "^6.7.0",
-    "ts-node": "^10.9.2",
-    "prisma-generator-fake-data": "file:../"
+    "@prisma/client": "^7.10.0",
+    "prisma-generator-fake-data": "file:../",
+    "tsx": "^4.23.15"
   },
   "devDependencies": {
     "@types/node": "22.15.13",
-    "prisma": "^6.7.0",
+    "prisma": "^7.10.0",
     "typescript": "5.8.3"
   }
 }

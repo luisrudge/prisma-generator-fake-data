@@ -13,6 +13,10 @@
 
 It's a [Prisma Generator](https://www.prisma.io/docs/concepts/components/prisma-schema/generators) that uses [faker.js](https://fakerjs.dev/) to create realistic-looking fake data for your Prisma models. With this generator, you can quickly and easily create fake data for your Prisma models, without having to write barely any code.
 
+### Supported Prisma versions
+
+Prisma 7 is the currently supported version. If you need Prisma 6, use version `0.18.3` of this package (`npm install -D prisma-generator-fake-data@0.18.3`).
+
 ### Get started
 
 - Setup your Prisma project as usual ([Get Started With Prisma](https://www.prisma.io/docs/getting-started))
